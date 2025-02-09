@@ -7,7 +7,10 @@
     <link rel="stylesheet" href="../../style.css" />
 
     <link href="../../src/css/output.css" rel="stylesheet" />
-    <script type="module" src="../../src/js/index.js" defer></script>
+    <script src="../../src/js/layout/sidebar.js" ></script>
+    <script src="../../src/js/layout/header.js" ></script>
+    <script src="../../src/js/layout/layout.js" ></script>
+    <script src="../../src/js/shared/steper.js" ></script>
     <!-- fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -17,6 +20,11 @@
     />
   </head>
   <body dir="rtl">
+    <main-header
+    namee="محمد الشريف"
+    role="مشرف رئيسى"
+    img=${userImage}
+    />
     <main-layout />
     <div class="p-4 mt-5 sm:mr-64" id="main-body">
       <div class="mt-14">
