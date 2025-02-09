@@ -1,4 +1,3 @@
-import ApexCharts from "apexcharts";
 const options = ({title,series,labels})=> {
   return {
   series: [

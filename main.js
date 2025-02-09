@@ -1,5 +1,3 @@
-import 'apexcharts'
-import  './src/js/atoms/apexChart/apexBar'
 
 // * Tab Selector in accounting-system for select content 
 document.addEventListener("DOMContentLoaded", function () {

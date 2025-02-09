@@ -1,5 +1,3 @@
-import ApexCharts from "apexcharts";
-
 const chartRender = ()=>{
   var options = {
     series: [44, 55, 13 ],
@@ -28,6 +26,6 @@ const chartRender = ()=>{
   const chart = new ApexCharts(document.querySelector("#chartBar"), options);
   return chart.render();
 }
-export default chartRender ()
+chartRender ()
 
 
