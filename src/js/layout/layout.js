@@ -17,7 +17,12 @@ class Layout extends HTMLElement {
     
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="../../../app.js"></script>
-
+    <script>
+const sidebarList = document.querySelector('.sidebar-list')
+function toggleSidebar() {
+  sidebarList.classList.add('hidden')
+} 
+</script>
   </head>
   <section>
 <main-sidebar img=${logo} />
