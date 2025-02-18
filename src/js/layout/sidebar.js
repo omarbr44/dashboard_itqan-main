@@ -191,7 +191,7 @@ class Sidebar extends HTMLElement {
         aria-label="Sidebar"
       >
         <div class="h-full px-3 pb-4 overflow-y-auto">
-          <div class="flex gap-x-6 mt-4">
+          <div class="flex gap-x-6 mt-4" style="justify-content: center;">
             <button onclick="toggleSidebar()">
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M3 7H21H3Z" fill="black" />
