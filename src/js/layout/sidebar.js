@@ -210,7 +210,7 @@ class Sidebar extends HTMLElement {
                 <li>
                   <a
                     href="${href}"
-                    class="flex items-center p-2 ${active ? "bg-[#377DFFa] text-whitea" : ""} text-gray-900 rounded-lg group"
+                    class="flex items-center p-2 ${active ? "bg-[#377DFF] text-white" : ""}  rounded-lg group"
                   >
                     ${icon}
                     <span class="ms-3 text-[14px] sidebar-list">${title}</span>
