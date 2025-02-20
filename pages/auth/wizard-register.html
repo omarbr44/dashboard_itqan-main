@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>تسجيل الدخول / التسجيل</title>
+    <!-- <link rel="stylesheet" href="styles.css"> -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/intl-tel-input@25.3.0/build/css/intlTelInput.css">
+    <link rel="stylesheet" href="https://cdn.hugeicons.com/font/hgi-stroke-rounded.css" />
+    <link href="https://cdn.jsdelivr.net/npm/flowbite@3.1.1/dist/flowbite.min.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@200;400;700&display=swap" rel="stylesheet">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="../../app.js"></script>
+
+     <style>
+        body{
+            font-family: Tajawal, sans-serif;
+        }
+    .step-indicator-line {
+            height: 2px;
+            background-color: #ddd; /* Or your preferred color */
+            width: 60px; /* Adjust as needed */
+            margin: 0 8px; /* Adjust spacing */
+        }
+     </style>
+</head>
+<body>
+    <div class="container h-screen flex justify-center items-center">
+        <img src="../../src/images/logo.png" class="w-[108px] logo absolute top-8 right-14">
+        <div class="bg-white p-8 rounded-lg shadow-md">
+            <div class="flex items-center justify-between mb-6">
+                <div class="flex items-center justify-center">
+                      <div class="step-indicator-container flex items-center gap-3 sm:gap-0">
+                        <div class="flex gap-2 items-center">
+                            <div class="step-indicator w-8 h-8 rounded-full bg-[#377dff] text-white flex items-center justify-center relative" data-step="1">
+                                <span>
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="step-indicator-check hidden w-5 h-5 absolute">
+                                        <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414l3.293 3.293 7.707-7.707a1 1 0 011.414 0z" clip-rule="evenodd" />
+                                    </svg>
+                                </span>
+                                <span>1</span>
+                            </div>
+                            <span>إنشاء حساب</span>
+                        </div>
+                        <div class="step-indicator-line"></div>
+                        <div class="flex gap-2 items-center">
+                          <div class="step-indicator w-8 h-8 rounded-full bg-gray-300 text-gray-500 flex items-center justify-center relative" data-step="2">
+                            <span>
+                                <span>2</span>
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="step-indicator-check hidden w-5 h-5 absolute">
+                                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414l3.293 3.293 7.707-7.707a1 1 0 011.414 0z" clip-rule="evenodd" />
+                                </svg>
+                            </span>
+                            </div>
+                            <span>نتعرف عليك</span>
+                        </div>
+                        <div class="step-indicator-line"></div>
+                        <div class="flex gap-2 items-center">
+                          <div class="step-indicator w-8 h-8 rounded-full bg-gray-300 text-gray-500 flex items-center justify-center relative" data-step="3">
+                            <span>
+                                <span>3</span>
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="step-indicator-check hidden w-5 h-5 absolute">
+                                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414l3.293 3.293 7.707-7.707a1 1 0 011.414 0z" clip-rule="evenodd" />
+                                </svg>
+                            </span>
+                        </div>
+                        <span>جاهزية متجرك</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="step-1" class="step">
+                <h2 class="text-2xl font-semibold my-8">ساعدنا نتعرف عليك لنقدم تجربة مميزة</h2>
+                <p class="text-gray-600 mb-6">هل لديك خبرة في التجارة؟</p>
+                <hr>
+                <div class="mt-10 mb-5 flex justify-end">
+                    <button onclick="nextStep(1)" class="bg-[#377dff] hover:bg-indigo-600 text-white font-bold px-4 py-2 rounded-md">التالي</button>
+                </div>
+            </div>
+        
+            <div id="step-2" class="step hidden">
+                <h2 class="text-2xl font-semibold my-8">ساعدنا نتعرف عليك لنقدم تجربة مميزة</h2>
+                <p class="text-gray-600 mb-6">هل لديك خبرة في التجارة؟</p>
+                <hr>
+                <div class="mt-10 mb-5 flex gap-3 justify-end">
+                    <button onclick="prevStep(2)" class="bg-gray-300 hover:bg-gray-400 text-gray-700 font-bold px-4 py-2 rounded-md mr-2">السابق</button>
+                    <button onclick="nextStep(2)" class="bg-[#377dff] hover:bg-indigo-600 text-white font-bold px-4 py-2 rounded-md">التالي</button>
+                </div>
+            </div>
+        
+            <div id="step-3" class="step hidden">
+                <h2 class="text-2xl font-semibold my-8">ساعدنا نتعرف عليك لنقدم تجربة مميزة</h2>
+                <p class="text-gray-600 mb-6">هل لديك خبرة في التجارة؟</p>
+                <hr>
+                <div class="mt-10 mb-5 flex gap-3 justify-end">
+                    <button onclick="prevStep(3)" class="bg-gray-300 hover:bg-gray-400 text-gray-700 font-bold px-4 py-2 rounded-md mr-2">السابق</button>
+                    <button class="bg-[#377dff] hover:bg-indigo-600 text-white font-bold px-4 py-2 rounded-md">إنهاء</button>
+                </div>
+            </div>
+    </div>
+    <script>
+        const steps = document.querySelectorAll('.step');
+const indicators = document.querySelectorAll('.step-indicator');
+let currentStep = 1;
+
+function showStep(stepIndex) {
+    console.log(stepIndex)
+    steps.forEach((step, index) => {
+        if (index === stepIndex - 1) {
+            step.classList.remove('hidden');
+        } else {
+            step.classList.add('hidden');
+        }
+    });
+
+    indicators.forEach((indicator, index) => {
+        if (index < stepIndex - 1) {
+            indicator.classList.remove('bg-gray-300', 'text-gray-500');
+            indicator.classList.add('bg-[#377dff]', 'text-white');
+            /* indicator.childNodes[1].childNodes[1].classList.remove('hidden') */
+        } else if (index === stepIndex - 1) {
+            indicator.classList.remove('bg-gray-300', 'text-gray-500');
+            indicator.classList.add('bg-[#377dff]', 'text-white');
+            /* indicator.childNodes[1].childNodes[1].classList.remove('hidden') */
+        } else {
+            indicator.classList.remove('bg-[#377dff]', 'text-white');
+            indicator.classList.add('bg-gray-300', 'text-gray-500');
+        }
+    });
+}
+
+function nextStep(currentStep) {
+    if (currentStep < steps.length) {
+        showStep(currentStep + 1);
+    }
+}
+
+function prevStep(currentStep) {
+    if (currentStep > 1) {
+        showStep(currentStep - 1);
+    }
+}
+
+showStep(currentStep); // Show the first step initially
+    </script>
+</body>
+</html>
