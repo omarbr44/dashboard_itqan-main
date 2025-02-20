@@ -21,7 +21,6 @@ body{
     display: flex;
     background-color: #fff;
     border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     width: 100%;
 }
 
@@ -107,7 +106,8 @@ button[type="submit"]:hover {
 </head>
 <body>
     <div class="container h-screen">
-        <div class="right-section items-center justify-center flex flex-col">
+        <div class="right-section items-center justify-center flex flex-col relative">
+            <img src="../../src/images/logo.png" class="w-[108px] logo absolute top-8 right-0">
             <div id="registerForm" class="form-container text-center">
                 <h1 class=" text-2xl font-bold mb-3">أدخل رمز التحقق</h1>
                 <p class="">تم إرسال رمز التحقق إلى بريدك الالكتروني ib****@gmail.com
