@@ -2,15 +2,25 @@ class Sidebar extends HTMLElement {
   constructor() {
     super();
     this.img = this.getAttribute('img') || "../../../src/images/logo.png"; // Default image
+    this.isSidebarOpen = true;
   }
 
   connectedCallback() {
     this.render();
+    this.addEventListeners();
+  }
+
+  toggleSidebarr() {
+    this.isSidebarOpen = !this.isSidebarOpen;
+    this.render();
+  }
+
+  addEventListeners() {
+    this.querySelector('button[onclick="toggleSidebarr()"]')?.addEventListener('click', () => this.toggleSidebarr());
   }
 
   render() {
     const currentPage = window.location.pathname.split('/').splice(6).join('/'); // Get current path (for active links)
-    console.log(currentPage)
     const menu = [
       {
         title: "الصفحة الرئيسية",
@@ -183,17 +193,26 @@ class Sidebar extends HTMLElement {
       },
     ];
 
-
     this.innerHTML = `
-      <aside
-        id="logo-sidebar"
-        class="fixed top-0 right-0 z-40 h-screen pt-20 transition-transform -translate-x-full bg-white border-r border-gray-200 sm:translate-x-0"
-        aria-label="Sidebar"
-      >
-        <div class="h-full px-3 pb-4 overflow-y-auto">
-          <div class="flex gap-x-6 mt-4" style="justify-content: center;">
-            <button onclick="toggleSidebar()">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <style>
+    .-translate-x-full {
+    --tw-translate-x: -140%;
+    transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+}
+    </style>
+      <div>
+        <!-- Sidebar Toggle Button (Visible on Small Screens) -->
+        <button
+          onclick="toggleSidebarr()"
+          class="sm:hidden fixed top-4 right-10 ms-2 z-50 p-2 bg-gray-200 rounded-lg"
+        >
+          <svg
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
             <path d="M3 7H21H3Z" fill="black" />
             <path d="M3 7H21" stroke="#292D32" stroke-width="1.5" stroke-linecap="round" />
             <path d="M3 12H21H3Z" fill="black" />
@@ -201,26 +220,64 @@ class Sidebar extends HTMLElement {
             <path d="M3 17H21H3Z" fill="black" />
             <path d="M3 17H21" stroke="#292D32" stroke-width="1.5" stroke-linecap="round" />
           </svg>
-            </button>
-            <img src="${this.img}" class='w-[108px] logo'>
-          </div>
-          <ul class="space-y-1 mt-3 font-medium">
-            ${menu.map(({ href, active, icon, title }) => {
-              return `
+        </button>
+
+        <!-- Sidebar -->
+        <aside
+          id="logo-sidebar"
+          class="fixed top-0 right-0 z-40 h-screen pt-20 transition-transform transform bg-white border-r border-gray-200 sm:translate-x-0 ${
+            this.isSidebarOpen ? 'translate-x-0' : '-translate-x-full'
+          }"
+          aria-label="Sidebar"
+        >
+          <div class="h-full px-3 pb-4 overflow-y-auto">
+            <!-- Logo and Close Button -->
+            <div class="flex gap-x-6 mt-4 justify-center">
+              <button onclick="toggleSidebar()">
+                <svg
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path d="M3 7H21H3Z" fill="black" />
+                  <path d="M3 7H21" stroke="#292D32" stroke-width="1.5" stroke-linecap="round" />
+                  <path d="M3 12H21H3Z" fill="black" />
+                  <path d="M3 12H21" stroke="#292D32" stroke-width="1.5" stroke-linecap="round" />
+                  <path d="M3 17H21H3Z" fill="black" />
+                  <path d="M3 17H21" stroke="#292D32" stroke-width="1.5" stroke-linecap="round" />
+                </svg>
+              </button>
+              <img src="${this.img}" class="w-[108px] logo" alt="Logo" />
+            </div>
+
+            <!-- Menu Items -->
+            <ul class="space-y-1 mt-3 font-medium">
+              ${menu
+                .map(
+                  (item) => `
                 <li>
                   <a
-                    href="${href}"
-                    class="flex items-center p-2 ${active ? "bg-[#377DFF] text-white" : ""}  rounded-lg group"
+                    href="${item.href}"
+                    class="flex items-center p-2 rounded-lg group ${
+                      item.active ? 'bg-[#377DFF] text-white' : 'text-gray-700'
+                    }"
                   >
-                    ${icon}
-                    <span class="ms-3 text-[14px] sidebar-list">${title}</span>
+                    <span>${item.icon}</span>
+                    <span class="ms-3 text-[14px] sidebar-list">${item.title}</span>
                   </a>
-                </li>`;
-            }).join('')}
-          </ul>
-        </div>
-      </aside>
+                </li>
+              `
+                )
+                .join('')}
+            </ul>
+          </div>
+        </aside>
+      </div>
     `;
+
+    this.addEventListeners();
   }
 }
 

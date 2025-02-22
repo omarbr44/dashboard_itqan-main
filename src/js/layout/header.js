@@ -9,6 +9,23 @@ class Header extends HTMLElement {
 
   connectedCallback() {
     this.render();
+    this.addEventListeners();
+  }
+  toggleNotification() {
+    const notificationMenu = document.querySelector('#notification-dropdown')
+    if(notificationMenu.classList.contains('hidden')) {
+      notificationMenu.classList.remove('hidden')
+      mainBody.classList.add('block')
+
+    }
+    else {
+      notificationMenu.classList.remove('block')
+      notificationMenu.classList.add('hidden')
+    }
+  }
+
+  addEventListeners() {
+    this.querySelector('#pell-icon')?.addEventListener('click', () => this.toggleNotification());
   }
 
   render() {
@@ -18,19 +35,19 @@ class Header extends HTMLElement {
     const role = this.getAttribute('role') || '';
 
     this.innerHTML = `
+      <head>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.css" rel="stylesheet" />
+
+<!-- Add Flowbite JS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.js"></script>
+</head>
       <header>
       <nav class="fixed top-0 z-50 w-full h-[80px] bg-white border-b border-gray-200">
       <div class="px-3 py-3 lg:px-5 lg:pl-3">
-        <div class="flex items-center justify-between">
+        <div class="flex items-center justify-end sm:justify-between">
   
 
           <div class="flex items-center justify-start rtl:justify-end">
-            <button data-drawer-target="logo-sidebar" data-drawer-toggle="logo-sidebar" aria-controls="logo-sidebar" type="button" class="inline-flex items-center p-2 text-sm text-gray-500 rounded-lg sm:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200">
-                <span class="sr-only">Open sidebar</span>
-                <svg class="w-6 h-6" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-                   <path clip-rule="evenodd" fill-rule="evenodd" d="M2 4.75A.75.75 0 012.75 4h14.5a.75.75 0 010 1.5H2.75A.75.75 0 012 4.75zm0 10.5a.75.75 0 01.75-.75h7.5a.75.75 0 010 1.5h-7.5a.75.75 0 01-.75-.75zM2 10a.75.75 0 01.75-.75h14.5a.75.75 0 010 1.5H2.75A.75.75 0 012 10z"></path>
-                </svg>
-             </button>
             <a href="../../../pages/user/profile.html" class="flex ms-2 md:me-24">
               <img src=${
                 this.img || "../../src/images/icons/avatar.png"
@@ -58,13 +75,49 @@ class Header extends HTMLElement {
           </div>
 
           <!--* Icons  -->
-          <div class=" gap-x-10 mx-5 hidden sm:flex">
+          <div class=" gap-x-10 mx-5 hidden sm:flex relative">
           <!-- Pell Icon -->
+          <button id="pell-icon" class="focus:outline-none">
           <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M26.919 18.7458L25.4123 16.2391C25.079 15.6924 24.7856 14.6391 24.7856 13.9991V11.5058C24.7856 6.66575 20.8523 2.73242 16.0256 2.73242C11.1856 2.74576 7.2523 6.66575 7.2523 11.5058V13.9858C7.2523 14.6258 6.95897 15.6791 6.63897 16.2258L5.1323 18.7324C4.55897 19.7058 4.42563 20.8124 4.78563 21.7724C5.14563 22.7458 5.95897 23.5191 7.02563 23.8658C8.46563 24.3458 9.91897 24.6924 11.399 24.9458C11.5456 24.9724 11.6923 24.9858 11.839 25.0124C12.0256 25.0391 12.2256 25.0658 12.4256 25.0924C12.7723 25.1458 13.119 25.1858 13.479 25.2124C14.319 25.2924 15.1723 25.3324 16.0256 25.3324C16.8656 25.3324 17.7056 25.2924 18.5323 25.2124C18.839 25.1858 19.1456 25.1591 19.439 25.1191C19.679 25.0924 19.919 25.0658 20.159 25.0258C20.3056 25.0124 20.4523 24.9858 20.599 24.9591C22.0923 24.7191 23.5723 24.3458 25.0123 23.8658C26.039 23.5191 26.8256 22.7458 27.199 21.7591C27.5723 20.7591 27.4656 19.6658 26.919 18.7458ZM16.999 13.3324C16.999 13.8924 16.5456 14.3458 15.9856 14.3458C15.4256 14.3458 14.9723 13.8924 14.9723 13.3324V9.19909C14.9723 8.63909 15.4256 8.18576 15.9856 8.18576C16.5456 8.18576 16.999 8.63909 16.999 9.19909V13.3324Z" fill="#377DFF"/>
             <path d="M19.7736 26.6793C19.2136 28.226 17.7336 29.3327 16.0002 29.3327C14.9469 29.3327 13.9069 28.906 13.1736 28.146C12.7469 27.746 12.4269 27.2127 12.2402 26.666C12.4136 26.6927 12.5869 26.706 12.7736 26.7327C13.0802 26.7727 13.4002 26.8127 13.7202 26.8393C14.4802 26.906 15.2536 26.946 16.0269 26.946C16.7869 26.946 17.5469 26.906 18.2936 26.8393C18.5736 26.8127 18.8536 26.7993 19.1202 26.7593C19.3336 26.7327 19.5469 26.706 19.7736 26.6793Z" fill="#377DFF"/>
             </svg>
-            
+            </button>
+               <!-- Notification Dropdown -->
+                <div id="notification-dropdown" style="top: 2rem;" class="hidden absolute right-0 mt-12 w-64 bg-white border border-gray-200 rounded-lg shadow-lg">
+                  <div class="p-4">
+                        <!-- Notification Items -->
+    <div class="space-y-2">
+      <!-- Single Notification -->
+      <div class="flex items-start gap-2">
+        <div class="flex-shrink-0">
+          <svg class="w-5 h-5 text-blue-500" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-11a1 1 0 10-2 0v3a1 1 0 00.293.707l2.828 2.829a1 1 0 101.415-1.415L11 9.586V7z" clip-rule="evenodd"></path>
+          </svg>
+        </div>
+        <div class="ml-3">
+          <p class="text-sm font-medium text-gray-900 mb-1">رسالة جديدة</p>
+          <p class="text-xs text-gray-500">لديك رسالة جديدة من محمد العمودي</p>
+        </div>
+      </div>
+      <hr>
+      <!-- Single Notification -->
+      <div class="flex items-start gap-2">
+        <div class="flex-shrink-0">
+          <svg class="w-5 h-5 text-blue-500" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-11a1 1 0 10-2 0v3a1 1 0 00.293.707l2.828 2.829a1 1 0 101.415-1.415L11 9.586V7z" clip-rule="evenodd"></path>
+          </svg>
+        </div>
+        <div class="ml-3">
+          <p class="text-sm font-medium text-gray-900 mb-1">رسالة جديدة</p>
+          <p class="text-xs text-gray-500">لديك رسالة جديدة من محمد العمودي</p>
+        </div>
+      </div>
+
+      </div>
+                  </div>
+                </div>
+
           <!-- Mode Icon -->
           <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M28.7043 21.2385C28.491 20.8785 27.891 20.3185 26.3977 20.5852C25.571 20.7319 24.731 20.7985 23.891 20.7585C20.7843 20.6252 17.971 19.1985 16.011 16.9985C14.2777 15.0652 13.211 12.5452 13.1977 9.82519C13.1977 8.30519 13.491 6.83853 14.091 5.45186C14.6777 4.10519 14.2643 3.39853 13.971 3.10519C13.6643 2.79853 12.9443 2.37186 11.531 2.95853C6.07766 5.25186 2.70432 10.7185 3.10432 16.5719C3.50432 22.0785 7.37099 26.7852 12.491 28.5585C13.7177 28.9852 15.011 29.2385 16.3443 29.2919C16.5577 29.3052 16.771 29.3185 16.9843 29.3185C21.451 29.3185 25.6377 27.2119 28.2777 23.6252C29.171 22.3852 28.931 21.5985 28.7043 21.2385Z" fill="#377DFF"/>
@@ -87,7 +140,7 @@ class Header extends HTMLElement {
     
     
     
-          <div class="flex items-center">
+          <div class="hidden sm:flex items-center">
               <div class="flex items-center ms-3">
               <div class="flex items-center md:order-2 space-x-1 md:space-x-0 rtl:space-x-reverse">
           <button type="button" data-dropdown-toggle="language-dropdown-menu" class="inline-flex items-center font-medium justify-center px-4 py-2 text-sm text-gray-900 rounded-lg cursor-pointer hover:bg-gray-100">

@@ -3453,7 +3453,9 @@ input:checked + .toggle-bg {
   .sm\:mr-3 {
     margin-right: 3rem;
   }
-
+  .right-10 {
+    right: 2rem;
+  }
   .sm\:flex {
     display: flex;
   }
