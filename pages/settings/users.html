@@ -7,7 +7,12 @@
     <link rel="stylesheet" href="../../style.css" />
 
     <link href="../../src/css/output.css" rel="stylesheet" />
-    <script type="module" src="../../src/js/index.js" defer></script>
+    <!-- <script type="module" src="../../src/js/index.js" defer></script> -->
+    <script src="../../src/js/layout/sidebar.js" ></script>
+    <script src="../../src/js/layout/header.js" ></script>
+    <script src="../../src/js/layout/layout.js" ></script>
+    <script src="../../src/js/shared/steper.js" ></script>
+    <script src="../../src/js/shared/table.js" ></script>
     <!-- fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -17,6 +22,11 @@
     />
   </head>
   <body dir="rtl">
+    <main-header
+    namee="محمد الشريف"
+    role="مشرف رئيسى"
+    img=${userImage}
+    />
     <main-layout />
     <div class="p-4 sm:mr-64" id="main-body">
       <div
@@ -32,18 +42,37 @@
         >
         </page-steper>
 
-        <table-builder
+<!--         <table-builder
           addTitle="اضافة مستخدم جديد"
           filter="true"
           printer="true"
           title="المستخدمين"
           id="table"
+        ></table-builder> -->
+        <table-builder
+          id="table"
+          addTitle="اضافة مستخدم جديد"
+          filter="true"
+          printer="true"
+          title="المستخدمين"
+          columns="الاسم,البريد الإلكتروني,رقم الهاتف,العنوان,تاريخ الانضمام,الحالة"
+          rows='[{"name": "John Doe", "email": "john@example.com", "phone": "123456789", "address": "123 Main St", "joinDate": "2023-01-01", "status": "نشط"}]'
         ></table-builder>
       </div>
     </div>
     <script defer src="../../sidebar.js"></script>
     <script defer>
       const table = document.getElementById("table");
+      const columns = [
+    "الاسم",
+    "البريد الإلكتروني",
+    "رقم الهاتف",
+    "العنوان",
+    "تاريخ الانضمام",
+    "الحالة",
+  ];
+      const columnsString = columns.join(",");
+      table.setAttribute("columns", columnsString);
       table.filter = `
           <div class='flex gap-x-2 items-center'>
           <div class='text-sm cursor-pointer flex items-center gap-x-2 border rounded-[8px] border-[#D0D5DD] py-[10px] px-[16px]'>
