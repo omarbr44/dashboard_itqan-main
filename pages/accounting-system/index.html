@@ -94,15 +94,15 @@
             <div id="tab1" class="tab-content hidden">
               <!-- Chart -->
               <div class="grid grid-cols-12 my-3">
-                <div id="chartLine" class="col-span-12 sm:col-span-7"></div>
-                <div id="chartBarBill" class="col-span-12 sm:col-span-4"></div>
+                <div id="chartLine" class="col-span-12 sm:col-span-7 "></div>
+                <div id="chartBarBill" class="col-span-12 sm:col-span-4 hidden sm:block"></div>
                 <div
                   id="chartLineRestrictions"
-                  class="col-span-12 sm:col-span-7"
+                  class="col-span-12 sm:col-span-7 mt-2"
                 ></div>
                 <div
                   id="chartBarRestrictions"
-                  class="col-span-12 sm:col-span-4"
+                  class="col-span-12 sm:col-span-4  hidden sm:block"
                 ></div>
               </div>
               <!-- End Chart -->
@@ -137,75 +137,132 @@
             <div id="tab5" class="tab-content hidden">
               
               <div class="grid grid-cols-12 gap-[20px]">
-                <div class="col-span-12 md:col-span-6 lg:col-span-4">
-                  <card-box
-                    title="العملاء"
-                    img="../../src/images/icons/clients.png"
-                    href="#"
-                  ></card-box>
-                </div>
-                <div class="col-span-12 md:col-span-6 lg:col-span-4">
-                  <card-box
-                    title="فواتير البيع"
-                    img="../../src/images/icons/costNote.png"
-                    href="#"
-                  ></card-box>
-                </div>
-                <div class="col-span-12 md:col-span-6 lg:col-span-4">
-                  <card-box
-                    title="يومية فواتير البيع"
-                    img="../../src/images/icons/analysisReport.png"
-                    href="#"
-                  ></card-box>
-                </div>
-                <div class="col-span-12 md:col-span-6 lg:col-span-4">
-                  <card-box
-                    title="عروض الاسعار"
-                    img="../../src/images/icons/offers.png"
-                    href="#"
-                  ></card-box>
-                </div>
-                <div class="col-span-12 md:col-span-6 lg:col-span-4">
-                  <card-box
-                    title="مرتجع المبيعات"
-                    img="../../src/images/icons/countSelles.png"
-                    href="#"
-                  ></card-box>
-                </div>
-                <div class="col-span-12 md:col-span-6 lg:col-span-4">
-                  <card-box
-                    title="تقرير فوائد الاصناف"
-                    img="../../src/images/icons/acceptReport.png"
-                    href="#"
-                  ></card-box>
-                </div>
 
-
-
+                <div class="col-span-12 md:col-span-6 lg:col-span-4">
+                  <a href="./new-domain-service.html">
+                    <div
+                      class="border flex flex-col justify-center items-center p-[24px] gap-[8px] rounded-[8px] border-[#EBEBEC]"
+                    >
+                      <img
+                        src="../../src/images/icons/clients.png"
+                        class="w-[83px] h-[83px] rounded-[12px]"
+                      />
+                      <h3 class="text-[18px] font-bold text-[#121212]">
+                        العملاء
+                      </h3>
+                    </div>
+                  </a>
+                </div>
+                <div class="col-span-12 md:col-span-6 lg:col-span-4">
+                  <a href="./new-domain-service.html">
+                    <div
+                      class="border flex flex-col justify-center items-center p-[24px] gap-[8px] rounded-[8px] border-[#EBEBEC]"
+                    >
+                      <img
+                        src="../../src/images/icons/costNote.png"
+                        class="w-[83px] h-[83px] rounded-[12px]"
+                      />
+                      <h3 class="text-[18px] font-bold text-[#121212]">
+                        فواتير البيع
+                      </h3>
+                    </div>
+                  </a>
+                </div>
+                <div class="col-span-12 md:col-span-6 lg:col-span-4">
+                  <a href="./new-domain-service.html">
+                    <div
+                      class="border flex flex-col justify-center items-center p-[24px] gap-[8px] rounded-[8px] border-[#EBEBEC]"
+                    >
+                      <img
+                        src="../../src/images/icons/analysisReport.png"
+                        class="w-[83px] h-[83px] rounded-[12px]"
+                      />
+                      <h3 class="text-[18px] font-bold text-[#121212]">
+                        يومية فواتير البيع
+                      </h3>
+                    </div>
+                  </a>
+                </div>
+                <div class="col-span-12 md:col-span-6 lg:col-span-4">
+                  <a href="./new-domain-service.html">
+                    <div
+                      class="border flex flex-col justify-center items-center p-[24px] gap-[8px] rounded-[8px] border-[#EBEBEC]"
+                    >
+                      <img
+                        src="../../src/images/icons/offers.png"
+                        class="w-[83px] h-[83px] rounded-[12px]"
+                      />
+                      <h3 class="text-[18px] font-bold text-[#121212]">
+                        عروض الاسعار
+                      </h3>
+                    </div>
+                  </a>
+                </div>
+                <div class="col-span-12 md:col-span-6 lg:col-span-4">
+                  <a href="./new-domain-service.html">
+                    <div
+                      class="border flex flex-col justify-center items-center p-[24px] gap-[8px] rounded-[8px] border-[#EBEBEC]"
+                    >
+                      <img
+                        src="../../src/images/icons/countSelles.png"
+                        class="w-[83px] h-[83px] rounded-[12px]"
+                      />
+                      <h3 class="text-[18px] font-bold text-[#121212]">
+                        مرتجع المبيعات
+                      </h3>
+                    </div>
+                  </a>
+                </div>
+                <div class="col-span-12 md:col-span-6 lg:col-span-4">
+                  <a href="./new-domain-service.html">
+                    <div
+                      class="border flex flex-col justify-center items-center p-[24px] gap-[8px] rounded-[8px] border-[#EBEBEC]"
+                    >
+                      <img
+                        src="../../src/images/icons/acceptReport.png"
+                        class="w-[83px] h-[83px] rounded-[12px]"
+                      />
+                      <h3 class="text-[18px] font-bold text-[#121212]">
+                        تقرير فوائد الاصناف
+                      </h3>
+                    </div>
+                  </a>
+                </div>
               </div>
             </div>
-
-
-
-
 
             </div>
             <div id="tab6" class="tab-content hidden">
               <div class="grid grid-cols-12 gap-[20px]">
                 <div class="col-span-12 md:col-span-6 lg:col-span-4">
-                  <card-box
-                    title="ادارة المستخدمين"
-                    img="../../src/images/icons/empCompany2.png"
-                    href="#"
-                  ></card-box>
+                  <a href="./new-domain-service.html">
+                    <div
+                      class="border flex flex-col justify-center items-center p-[24px] gap-[8px] rounded-[8px] border-[#EBEBEC]"
+                    >
+                      <img
+                        src="../../src/images/icons/empCompany2.png"
+                        class="w-[83px] h-[83px] rounded-[12px]"
+                      />
+                      <h3 class="text-[18px] font-bold text-[#121212]">
+                        ادارة المستخدمين
+                      </h3>
+                    </div>
+                  </a>
                 </div>
-
                 <div class="col-span-12 md:col-span-6 lg:col-span-4">
-                  <card-box
-                    title="نشاط المستخدمين"
-                    img="../../src/images/icons/userActive.png"
-                    href="#"
-                  ></card-box>
+                  <a href="./new-domain-service.html">
+                    <div
+                      class="border flex flex-col justify-center items-center p-[24px] gap-[8px] rounded-[8px] border-[#EBEBEC]"
+                    >
+                      <img
+                        src="../../src/images/icons/userActive.png"
+                        class="w-[83px] h-[83px] rounded-[12px]"
+                      />
+                      <h3 class="text-[18px] font-bold text-[#121212]">
+                        نشاط المستخدمين
+                      </h3>
+                    </div>
+                  </a>
                 </div>
               </div>
             </div>
@@ -274,12 +331,37 @@
 
               <!-- Table -->
               <table-builder
-                addTitle="إضافة فاتورة جديدة"
-                filter="true"
-                printer="true"
-                title="الفواتير"
-                id="table"
-                addHref="./add-bill.html"
+              id="table"
+              addTitle="اضافة فاتورة جديد"
+              filter="true"
+              printer="true"
+              title="لفواتير"
+              columns="الاسم,البريد الإلكتروني,رقم الهاتف,العنوان,تاريخ الانضمام,الحالة"
+              rows='
+              [
+              {"name": "John Doe", "email": "john@example.com", "phone": "123456789", "address": "123 Main St", "joinDate": "2023-01-01", "status": "نشط"},
+              {"name": "John Doe", "email": "john@example.com", "phone": "123456789", "address": "123 Main St", "joinDate": "2023-01-01", "status": "نشط"},
+              {"name": "John Doe", "email": "john@example.com", "phone": "123456789", "address": "123 Main St", "joinDate": "2023-01-01", "status": "نشط"},
+              {"name": "John Doe", "email": "john@example.com", "phone": "123456789", "address": "123 Main St", "joinDate": "2023-01-01", "status": "نشط"},
+              {"name": "John Doe", "email": "john@example.com", "phone": "123456789", "address": "123 Main St", "joinDate": "2023-01-01", "status": "نشط"},
+              {"name": "John Doe", "email": "john@example.com", "phone": "123456789", "address": "123 Main St", "joinDate": "2023-01-01", "status": "نشط"},
+              {"name": "John Doe", "email": "john@example.com", "phone": "123456789", "address": "123 Main St", "joinDate": "2023-01-01", "status": "نشط"},
+              {"name": "John Doe", "email": "john@example.com", "phone": "123456789", "address": "123 Main St", "joinDate": "2023-01-01", "status": "نشط"},
+              {"name": "John Doe", "email": "john@example.com", "phone": "123456789", "address": "123 Main St", "joinDate": "2023-01-01", "status": "نشط"},
+              {"name": "John Doe", "email": "john@example.com", "phone": "123456789", "address": "123 Main St", "joinDate": "2023-01-01", "status": "نشط"},
+              {"name": "John Doe", "email": "john@example.com", "phone": "123456789", "address": "123 Main St", "joinDate": "2023-01-01", "status": "نشط"},
+              {"name": "John Doe", "email": "john@example.com", "phone": "123456789", "address": "123 Main St", "joinDate": "2023-01-01", "status": "نشط"},
+              {"name": "John Doe", "email": "john@example.com", "phone": "123456789", "address": "123 Main St", "joinDate": "2023-01-01", "status": "نشط"},
+              {"name": "John Doe", "email": "john@example.com", "phone": "123456789", "address": "123 Main St", "joinDate": "2023-01-01", "status": "نشط"},
+              {"name": "John Doe", "email": "john@example.com", "phone": "123456789", "address": "123 Main St", "joinDate": "2023-01-01", "status": "نشط"},
+              {"name": "John Doe", "email": "john@example.com", "phone": "123456789", "address": "123 Main St", "joinDate": "2023-01-01", "status": "نشط"},
+              {"name": "John Doe", "email": "john@example.com", "phone": "123456789", "address": "123 Main St", "joinDate": "2023-01-01", "status": "نشط"},
+              {"name": "John Doe", "email": "john@example.com", "phone": "123456789", "address": "123 Main St", "joinDate": "2023-01-01", "status": "نشط"},
+              {"name": "John Doe", "email": "john@example.com", "phone": "123456789", "address": "123 Main St", "joinDate": "2023-01-01", "status": "نشط"},
+              {"name": "John Doe", "email": "john@example.com", "phone": "123456789", "address": "123 Main St", "joinDate": "2023-01-01", "status": "نشط"},
+              {"name": "John Doe", "email": "john@example.com", "phone": "123456789", "address": "123 Main St", "joinDate": "2023-01-01", "status": "نشط"}
+              ]
+              '
               ></table-builder>
             </div>
           </div>
