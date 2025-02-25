@@ -11,13 +11,19 @@
     <script src="../../src/js/layout/header.js" ></script>
     <script src="../../src/js/layout/layout.js" ></script>
     <script src="../../src/js/shared/steper.js" ></script>
+    
     <!-- fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <link href="https://cdn.jsdelivr.net/npm/flowbite@3.1.1/dist/flowbite.min.css" rel="stylesheet" />
     <link
       href="https://fonts.googleapis.com/css2?family=Cairo:wght@200..1000&display=swap"
       rel="stylesheet"
     />
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="../../app.js"></script>
   </head>
   <body dir="rtl">
     <main-header
@@ -97,273 +103,177 @@
       <!-- Content -->
 
       <div class="grid grid-cols-5 mt-6 gap-3">
-          <div class="col-span-5 md:col-span-1  border border-[#EAECF0] rounded-[12px]">
+        <!-- Repeat this block for each card -->
+        <div class="col-span-5 md:col-span-1 border border-[#EAECF0] rounded-[12px]">
             <div class="flex p-3 justify-between gap-3 w-full items-center bg-[#F9FAFB] border-b border-[#EAECF0] pb-3">
-              <h4 class="text-[#475467] font-semibold">ادارة المستخدمين</h4>
-              <input id="checkbox-1" type="checkbox" value="" class=" w-[20px] h-[20px]  rounded-[6px] text-blue-600  border-gray-300  focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 dark:focus:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600" >
+                <h4 class="text-[#475467] font-semibold">ادارة المستخدمين</h4>
+                <input id="header-checkbox-1" type="checkbox" class="header-checkbox w-[20px] h-[20px] rounded-[6px] text-blue-600 border-gray-300 focus:ring-blue-500">
             </div>
-            <ul >
-              <li class="flex font-semibold border-b py-2 items-center border-[#EAECF0] px-3 flex-wrap justify-between gap-3">
-                <p class="">القراءة</p>
-                <input id="checkbox-1" type="checkbox" value="" class=" w-[20px] h-[20px] text-blue-600  border-gray-300 rounded-[6px] focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 dark:focus:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600" >
-              </li>
-              <li class="flex font-semibold border-b py-2 items-center border-[#EAECF0] px-3 flex-wrap justify-between gap-3">
-                <p class="">التعديل</p>
-                <input id="checkbox-1" type="checkbox" value="" class=" w-[20px] h-[20px] text-blue-600  border-gray-300 rounded-[6px] focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 dark:focus:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600" >
-              </li>
-              <li class="flex font-semibold border-b py-2 items-center border-[#EAECF0] px-3 flex-wrap justify-between gap-3">
-                <p class="">الإضافة</p>
-                <input id="checkbox-1" type="checkbox" value="" class=" w-[20px] h-[20px] text-blue-600  border-gray-300 rounded-[6px] focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 dark:focus:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600" >
-              </li>
-              <li class="flex font-semibold py-2 items-center px-3 flex-wrap justify-between gap-3">
-                <p class="">الحذف</p>
-                <input id="checkbox-1" type="checkbox" value="" class=" w-[20px] h-[20px] text-blue-600  border-gray-300 rounded-[6px] focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 dark:focus:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600" >
-              </li>
+            <ul>
+                <li class="flex font-semibold border-b py-2 items-center border-[#EAECF0] px-3 flex-wrap justify-between gap-3">
+                    <p class="">القراءة</p>
+                    <input type="checkbox" class="child-checkbox w-[20px] h-[20px] text-blue-600 border-gray-300 rounded-[6px] focus:ring-blue-500">
+                </li>
+                <li class="flex font-semibold border-b py-2 items-center border-[#EAECF0] px-3 flex-wrap justify-between gap-3">
+                    <p class="">التعديل</p>
+                    <input type="checkbox" class="child-checkbox w-[20px] h-[20px] text-blue-600 border-gray-300 rounded-[6px] focus:ring-blue-500">
+                </li>
+                <li class="flex font-semibold border-b py-2 items-center border-[#EAECF0] px-3 flex-wrap justify-between gap-3">
+                    <p class="">الإضافة</p>
+                    <input type="checkbox" class="child-checkbox w-[20px] h-[20px] text-blue-600 border-gray-300 rounded-[6px] focus:ring-blue-500">
+                </li>
+                <li class="flex font-semibold py-2 items-center px-3 flex-wrap justify-between gap-3">
+                    <p class="">الحذف</p>
+                    <input type="checkbox" class="child-checkbox w-[20px] h-[20px] text-blue-600 border-gray-300 rounded-[6px] focus:ring-blue-500">
+                </li>
             </ul>
-
-          </div>
-
-          <div class="col-span-5 md:col-span-1  border border-[#EAECF0] rounded-[12px]">
+        </div>
+        <div class="col-span-5 md:col-span-1 border border-[#EAECF0] rounded-[12px]">
             <div class="flex p-3 justify-between gap-3 w-full items-center bg-[#F9FAFB] border-b border-[#EAECF0] pb-3">
-              <h4 class="text-[#475467] font-semibold">ادارة المستخدمين</h4>
-              <input id="checkbox-1" type="checkbox" value="" class=" w-[20px] h-[20px]  rounded-[6px] text-blue-600  border-gray-300  focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 dark:focus:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600" >
+                <h4 class="text-[#475467] font-semibold">ادارة المستخدمين</h4>
+                <input id="header-checkbox-1" type="checkbox" class="header-checkbox w-[20px] h-[20px] rounded-[6px] text-blue-600 border-gray-300 focus:ring-blue-500">
             </div>
-            <ul >
-              <li class="flex font-semibold border-b py-2 items-center border-[#EAECF0] px-3 flex-wrap justify-between gap-3">
-                <p class="">القراءة</p>
-                <input id="checkbox-1" type="checkbox" value="" class=" w-[20px] h-[20px] text-blue-600  border-gray-300 rounded-[6px] focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 dark:focus:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600" >
-              </li>
-              <li class="flex font-semibold border-b py-2 items-center border-[#EAECF0] px-3 flex-wrap justify-between gap-3">
-                <p class="">التعديل</p>
-                <input id="checkbox-1" type="checkbox" value="" class=" w-[20px] h-[20px] text-blue-600  border-gray-300 rounded-[6px] focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 dark:focus:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600" >
-              </li>
-              <li class="flex font-semibold border-b py-2 items-center border-[#EAECF0] px-3 flex-wrap justify-between gap-3">
-                <p class="">الإضافة</p>
-                <input id="checkbox-1" type="checkbox" value="" class=" w-[20px] h-[20px] text-blue-600  border-gray-300 rounded-[6px] focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 dark:focus:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600" >
-              </li>
-              <li class="flex font-semibold py-2 items-center px-3 flex-wrap justify-between gap-3">
-                <p class="">الحذف</p>
-                <input id="checkbox-1" type="checkbox" value="" class=" w-[20px] h-[20px] text-blue-600  border-gray-300 rounded-[6px] focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 dark:focus:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600" >
-              </li>
+            <ul>
+                <li class="flex font-semibold border-b py-2 items-center border-[#EAECF0] px-3 flex-wrap justify-between gap-3">
+                    <p class="">القراءة</p>
+                    <input type="checkbox" class="child-checkbox w-[20px] h-[20px] text-blue-600 border-gray-300 rounded-[6px] focus:ring-blue-500">
+                </li>
+                <li class="flex font-semibold border-b py-2 items-center border-[#EAECF0] px-3 flex-wrap justify-between gap-3">
+                    <p class="">التعديل</p>
+                    <input type="checkbox" class="child-checkbox w-[20px] h-[20px] text-blue-600 border-gray-300 rounded-[6px] focus:ring-blue-500">
+                </li>
+                <li class="flex font-semibold border-b py-2 items-center border-[#EAECF0] px-3 flex-wrap justify-between gap-3">
+                    <p class="">الإضافة</p>
+                    <input type="checkbox" class="child-checkbox w-[20px] h-[20px] text-blue-600 border-gray-300 rounded-[6px] focus:ring-blue-500">
+                </li>
+                <li class="flex font-semibold py-2 items-center px-3 flex-wrap justify-between gap-3">
+                    <p class="">الحذف</p>
+                    <input type="checkbox" class="child-checkbox w-[20px] h-[20px] text-blue-600 border-gray-300 rounded-[6px] focus:ring-blue-500">
+                </li>
             </ul>
-
-          </div>
-
-          <div class="col-span-5 md:col-span-1  border border-[#EAECF0] rounded-[12px]">
+        </div>
+        <div class="col-span-5 md:col-span-1 border border-[#EAECF0] rounded-[12px]">
             <div class="flex p-3 justify-between gap-3 w-full items-center bg-[#F9FAFB] border-b border-[#EAECF0] pb-3">
-              <h4 class="text-[#475467] font-semibold">ادارة المستخدمين</h4>
-              <input id="checkbox-1" type="checkbox" value="" class=" w-[20px] h-[20px]  rounded-[6px] text-blue-600  border-gray-300  focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 dark:focus:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600" >
+                <h4 class="text-[#475467] font-semibold">ادارة المستخدمين</h4>
+                <input id="header-checkbox-1" type="checkbox" class="header-checkbox w-[20px] h-[20px] rounded-[6px] text-blue-600 border-gray-300 focus:ring-blue-500">
             </div>
-            <ul >
-              <li class="flex font-semibold border-b py-2 items-center border-[#EAECF0] px-3 flex-wrap justify-between gap-3">
-                <p class="">القراءة</p>
-                <input id="checkbox-1" type="checkbox" value="" class=" w-[20px] h-[20px] text-blue-600  border-gray-300 rounded-[6px] focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 dark:focus:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600" >
-              </li>
-              <li class="flex font-semibold border-b py-2 items-center border-[#EAECF0] px-3 flex-wrap justify-between gap-3">
-                <p class="">التعديل</p>
-                <input id="checkbox-1" type="checkbox" value="" class=" w-[20px] h-[20px] text-blue-600  border-gray-300 rounded-[6px] focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 dark:focus:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600" >
-              </li>
-              <li class="flex font-semibold border-b py-2 items-center border-[#EAECF0] px-3 flex-wrap justify-between gap-3">
-                <p class="">الإضافة</p>
-                <input id="checkbox-1" type="checkbox" value="" class=" w-[20px] h-[20px] text-blue-600  border-gray-300 rounded-[6px] focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 dark:focus:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600" >
-              </li>
-              <li class="flex font-semibold py-2 items-center px-3 flex-wrap justify-between gap-3">
-                <p class="">الحذف</p>
-                <input id="checkbox-1" type="checkbox" value="" class=" w-[20px] h-[20px] text-blue-600  border-gray-300 rounded-[6px] focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 dark:focus:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600" >
-              </li>
+            <ul>
+                <li class="flex font-semibold border-b py-2 items-center border-[#EAECF0] px-3 flex-wrap justify-between gap-3">
+                    <p class="">القراءة</p>
+                    <input type="checkbox" class="child-checkbox w-[20px] h-[20px] text-blue-600 border-gray-300 rounded-[6px] focus:ring-blue-500">
+                </li>
+                <li class="flex font-semibold border-b py-2 items-center border-[#EAECF0] px-3 flex-wrap justify-between gap-3">
+                    <p class="">التعديل</p>
+                    <input type="checkbox" class="child-checkbox w-[20px] h-[20px] text-blue-600 border-gray-300 rounded-[6px] focus:ring-blue-500">
+                </li>
+                <li class="flex font-semibold border-b py-2 items-center border-[#EAECF0] px-3 flex-wrap justify-between gap-3">
+                    <p class="">الإضافة</p>
+                    <input type="checkbox" class="child-checkbox w-[20px] h-[20px] text-blue-600 border-gray-300 rounded-[6px] focus:ring-blue-500">
+                </li>
+                <li class="flex font-semibold py-2 items-center px-3 flex-wrap justify-between gap-3">
+                    <p class="">الحذف</p>
+                    <input type="checkbox" class="child-checkbox w-[20px] h-[20px] text-blue-600 border-gray-300 rounded-[6px] focus:ring-blue-500">
+                </li>
             </ul>
-
-          </div>
-
-          <div class="col-span-5 md:col-span-1  border border-[#EAECF0] rounded-[12px]">
+        </div>
+        <div class="col-span-5 md:col-span-1 border border-[#EAECF0] rounded-[12px]">
             <div class="flex p-3 justify-between gap-3 w-full items-center bg-[#F9FAFB] border-b border-[#EAECF0] pb-3">
-              <h4 class="text-[#475467] font-semibold">ادارة المستخدمين</h4>
-              <input id="checkbox-1" type="checkbox" value="" class=" w-[20px] h-[20px]  rounded-[6px] text-blue-600  border-gray-300  focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 dark:focus:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600" >
+                <h4 class="text-[#475467] font-semibold">ادارة المستخدمين</h4>
+                <input id="header-checkbox-1" type="checkbox" class="header-checkbox w-[20px] h-[20px] rounded-[6px] text-blue-600 border-gray-300 focus:ring-blue-500">
             </div>
-            <ul >
-              <li class="flex font-semibold border-b py-2 items-center border-[#EAECF0] px-3 flex-wrap justify-between gap-3">
-                <p class="">القراءة</p>
-                <input id="checkbox-1" type="checkbox" value="" class=" w-[20px] h-[20px] text-blue-600  border-gray-300 rounded-[6px] focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 dark:focus:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600" >
-              </li>
-              <li class="flex font-semibold border-b py-2 items-center border-[#EAECF0] px-3 flex-wrap justify-between gap-3">
-                <p class="">التعديل</p>
-                <input id="checkbox-1" type="checkbox" value="" class=" w-[20px] h-[20px] text-blue-600  border-gray-300 rounded-[6px] focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 dark:focus:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600" >
-              </li>
-              <li class="flex font-semibold border-b py-2 items-center border-[#EAECF0] px-3 flex-wrap justify-between gap-3">
-                <p class="">الإضافة</p>
-                <input id="checkbox-1" type="checkbox" value="" class=" w-[20px] h-[20px] text-blue-600  border-gray-300 rounded-[6px] focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 dark:focus:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600" >
-              </li>
-              <li class="flex font-semibold py-2 items-center px-3 flex-wrap justify-between gap-3">
-                <p class="">الحذف</p>
-                <input id="checkbox-1" type="checkbox" value="" class=" w-[20px] h-[20px] text-blue-600  border-gray-300 rounded-[6px] focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 dark:focus:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600" >
-              </li>
+            <ul>
+                <li class="flex font-semibold border-b py-2 items-center border-[#EAECF0] px-3 flex-wrap justify-between gap-3">
+                    <p class="">القراءة</p>
+                    <input type="checkbox" class="child-checkbox w-[20px] h-[20px] text-blue-600 border-gray-300 rounded-[6px] focus:ring-blue-500">
+                </li>
+                <li class="flex font-semibold border-b py-2 items-center border-[#EAECF0] px-3 flex-wrap justify-between gap-3">
+                    <p class="">التعديل</p>
+                    <input type="checkbox" class="child-checkbox w-[20px] h-[20px] text-blue-600 border-gray-300 rounded-[6px] focus:ring-blue-500">
+                </li>
+                <li class="flex font-semibold border-b py-2 items-center border-[#EAECF0] px-3 flex-wrap justify-between gap-3">
+                    <p class="">الإضافة</p>
+                    <input type="checkbox" class="child-checkbox w-[20px] h-[20px] text-blue-600 border-gray-300 rounded-[6px] focus:ring-blue-500">
+                </li>
+                <li class="flex font-semibold py-2 items-center px-3 flex-wrap justify-between gap-3">
+                    <p class="">الحذف</p>
+                    <input type="checkbox" class="child-checkbox w-[20px] h-[20px] text-blue-600 border-gray-300 rounded-[6px] focus:ring-blue-500">
+                </li>
             </ul>
-
-          </div>
-
-          <div class="col-span-5 md:col-span-1  border border-[#EAECF0] rounded-[12px]">
+        </div>
+        <div class="col-span-5 md:col-span-1 border border-[#EAECF0] rounded-[12px]">
             <div class="flex p-3 justify-between gap-3 w-full items-center bg-[#F9FAFB] border-b border-[#EAECF0] pb-3">
-              <h4 class="text-[#475467] font-semibold">ادارة المستخدمين</h4>
-              <input id="checkbox-1" type="checkbox" value="" class=" w-[20px] h-[20px]  rounded-[6px] text-blue-600  border-gray-300  focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 dark:focus:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600" >
+                <h4 class="text-[#475467] font-semibold">ادارة المستخدمين</h4>
+                <input id="header-checkbox-1" type="checkbox" class="header-checkbox w-[20px] h-[20px] rounded-[6px] text-blue-600 border-gray-300 focus:ring-blue-500">
             </div>
-            <ul >
-              <li class="flex font-semibold border-b py-2 items-center border-[#EAECF0] px-3 flex-wrap justify-between gap-3">
-                <p class="">القراءة</p>
-                <input id="checkbox-1" type="checkbox" value="" class=" w-[20px] h-[20px] text-blue-600  border-gray-300 rounded-[6px] focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 dark:focus:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600" >
-              </li>
-              <li class="flex font-semibold border-b py-2 items-center border-[#EAECF0] px-3 flex-wrap justify-between gap-3">
-                <p class="">التعديل</p>
-                <input id="checkbox-1" type="checkbox" value="" class=" w-[20px] h-[20px] text-blue-600  border-gray-300 rounded-[6px] focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 dark:focus:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600" >
-              </li>
-              <li class="flex font-semibold border-b py-2 items-center border-[#EAECF0] px-3 flex-wrap justify-between gap-3">
-                <p class="">الإضافة</p>
-                <input id="checkbox-1" type="checkbox" value="" class=" w-[20px] h-[20px] text-blue-600  border-gray-300 rounded-[6px] focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 dark:focus:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600" >
-              </li>
-              <li class="flex font-semibold py-2 items-center px-3 flex-wrap justify-between gap-3">
-                <p class="">الحذف</p>
-                <input id="checkbox-1" type="checkbox" value="" class=" w-[20px] h-[20px] text-blue-600  border-gray-300 rounded-[6px] focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 dark:focus:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600" >
-              </li>
+            <ul>
+                <li class="flex font-semibold border-b py-2 items-center border-[#EAECF0] px-3 flex-wrap justify-between gap-3">
+                    <p class="">القراءة</p>
+                    <input type="checkbox" class="child-checkbox w-[20px] h-[20px] text-blue-600 border-gray-300 rounded-[6px] focus:ring-blue-500">
+                </li>
+                <li class="flex font-semibold border-b py-2 items-center border-[#EAECF0] px-3 flex-wrap justify-between gap-3">
+                    <p class="">التعديل</p>
+                    <input type="checkbox" class="child-checkbox w-[20px] h-[20px] text-blue-600 border-gray-300 rounded-[6px] focus:ring-blue-500">
+                </li>
+                <li class="flex font-semibold border-b py-2 items-center border-[#EAECF0] px-3 flex-wrap justify-between gap-3">
+                    <p class="">الإضافة</p>
+                    <input type="checkbox" class="child-checkbox w-[20px] h-[20px] text-blue-600 border-gray-300 rounded-[6px] focus:ring-blue-500">
+                </li>
+                <li class="flex font-semibold py-2 items-center px-3 flex-wrap justify-between gap-3">
+                    <p class="">الحذف</p>
+                    <input type="checkbox" class="child-checkbox w-[20px] h-[20px] text-blue-600 border-gray-300 rounded-[6px] focus:ring-blue-500">
+                </li>
             </ul>
-
-          </div>
-
-          <div class="col-span-5 md:col-span-1  border border-[#EAECF0] rounded-[12px]">
+        </div>
+        <div class="col-span-5 md:col-span-1 border border-[#EAECF0] rounded-[12px]">
             <div class="flex p-3 justify-between gap-3 w-full items-center bg-[#F9FAFB] border-b border-[#EAECF0] pb-3">
-              <h4 class="text-[#475467] font-semibold">ادارة المستخدمين</h4>
-              <input id="checkbox-1" type="checkbox" value="" class=" w-[20px] h-[20px]  rounded-[6px] text-blue-600  border-gray-300  focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 dark:focus:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600" >
+                <h4 class="text-[#475467] font-semibold">ادارة المستخدمين</h4>
+                <input id="header-checkbox-1" type="checkbox" class="header-checkbox w-[20px] h-[20px] rounded-[6px] text-blue-600 border-gray-300 focus:ring-blue-500">
             </div>
-            <ul >
-              <li class="flex font-semibold border-b py-2 items-center border-[#EAECF0] px-3 flex-wrap justify-between gap-3">
-                <p class="">القراءة</p>
-                <input id="checkbox-1" type="checkbox" value="" class=" w-[20px] h-[20px] text-blue-600  border-gray-300 rounded-[6px] focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 dark:focus:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600" >
-              </li>
-              <li class="flex font-semibold border-b py-2 items-center border-[#EAECF0] px-3 flex-wrap justify-between gap-3">
-                <p class="">التعديل</p>
-                <input id="checkbox-1" type="checkbox" value="" class=" w-[20px] h-[20px] text-blue-600  border-gray-300 rounded-[6px] focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 dark:focus:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600" >
-              </li>
-              <li class="flex font-semibold border-b py-2 items-center border-[#EAECF0] px-3 flex-wrap justify-between gap-3">
-                <p class="">الإضافة</p>
-                <input id="checkbox-1" type="checkbox" value="" class=" w-[20px] h-[20px] text-blue-600  border-gray-300 rounded-[6px] focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 dark:focus:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600" >
-              </li>
-              <li class="flex font-semibold py-2 items-center px-3 flex-wrap justify-between gap-3">
-                <p class="">الحذف</p>
-                <input id="checkbox-1" type="checkbox" value="" class=" w-[20px] h-[20px] text-blue-600  border-gray-300 rounded-[6px] focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 dark:focus:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600" >
-              </li>
+            <ul>
+                <li class="flex font-semibold border-b py-2 items-center border-[#EAECF0] px-3 flex-wrap justify-between gap-3">
+                    <p class="">القراءة</p>
+                    <input type="checkbox" class="child-checkbox w-[20px] h-[20px] text-blue-600 border-gray-300 rounded-[6px] focus:ring-blue-500">
+                </li>
+                <li class="flex font-semibold border-b py-2 items-center border-[#EAECF0] px-3 flex-wrap justify-between gap-3">
+                    <p class="">التعديل</p>
+                    <input type="checkbox" class="child-checkbox w-[20px] h-[20px] text-blue-600 border-gray-300 rounded-[6px] focus:ring-blue-500">
+                </li>
+                <li class="flex font-semibold border-b py-2 items-center border-[#EAECF0] px-3 flex-wrap justify-between gap-3">
+                    <p class="">الإضافة</p>
+                    <input type="checkbox" class="child-checkbox w-[20px] h-[20px] text-blue-600 border-gray-300 rounded-[6px] focus:ring-blue-500">
+                </li>
+                <li class="flex font-semibold py-2 items-center px-3 flex-wrap justify-between gap-3">
+                    <p class="">الحذف</p>
+                    <input type="checkbox" class="child-checkbox w-[20px] h-[20px] text-blue-600 border-gray-300 rounded-[6px] focus:ring-blue-500">
+                </li>
             </ul>
-
-          </div>
-
-          <div class="col-span-5 md:col-span-1  border border-[#EAECF0] rounded-[12px]">
+        </div>
+        <div class="col-span-5 md:col-span-1 border border-[#EAECF0] rounded-[12px]">
             <div class="flex p-3 justify-between gap-3 w-full items-center bg-[#F9FAFB] border-b border-[#EAECF0] pb-3">
-              <h4 class="text-[#475467] font-semibold">ادارة المستخدمين</h4>
-              <input id="checkbox-1" type="checkbox" value="" class=" w-[20px] h-[20px]  rounded-[6px] text-blue-600  border-gray-300  focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 dark:focus:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600" >
+                <h4 class="text-[#475467] font-semibold">ادارة المستخدمين</h4>
+                <input id="header-checkbox-1" type="checkbox" class="header-checkbox w-[20px] h-[20px] rounded-[6px] text-blue-600 border-gray-300 focus:ring-blue-500">
             </div>
-            <ul >
-              <li class="flex font-semibold border-b py-2 items-center border-[#EAECF0] px-3 flex-wrap justify-between gap-3">
-                <p class="">القراءة</p>
-                <input id="checkbox-1" type="checkbox" value="" class=" w-[20px] h-[20px] text-blue-600  border-gray-300 rounded-[6px] focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 dark:focus:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600" >
-              </li>
-              <li class="flex font-semibold border-b py-2 items-center border-[#EAECF0] px-3 flex-wrap justify-between gap-3">
-                <p class="">التعديل</p>
-                <input id="checkbox-1" type="checkbox" value="" class=" w-[20px] h-[20px] text-blue-600  border-gray-300 rounded-[6px] focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 dark:focus:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600" >
-              </li>
-              <li class="flex font-semibold border-b py-2 items-center border-[#EAECF0] px-3 flex-wrap justify-between gap-3">
-                <p class="">الإضافة</p>
-                <input id="checkbox-1" type="checkbox" value="" class=" w-[20px] h-[20px] text-blue-600  border-gray-300 rounded-[6px] focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 dark:focus:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600" >
-              </li>
-              <li class="flex font-semibold py-2 items-center px-3 flex-wrap justify-between gap-3">
-                <p class="">الحذف</p>
-                <input id="checkbox-1" type="checkbox" value="" class=" w-[20px] h-[20px] text-blue-600  border-gray-300 rounded-[6px] focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 dark:focus:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600" >
-              </li>
+            <ul>
+                <li class="flex font-semibold border-b py-2 items-center border-[#EAECF0] px-3 flex-wrap justify-between gap-3">
+                    <p class="">القراءة</p>
+                    <input type="checkbox" class="child-checkbox w-[20px] h-[20px] text-blue-600 border-gray-300 rounded-[6px] focus:ring-blue-500">
+                </li>
+                <li class="flex font-semibold border-b py-2 items-center border-[#EAECF0] px-3 flex-wrap justify-between gap-3">
+                    <p class="">التعديل</p>
+                    <input type="checkbox" class="child-checkbox w-[20px] h-[20px] text-blue-600 border-gray-300 rounded-[6px] focus:ring-blue-500">
+                </li>
+                <li class="flex font-semibold border-b py-2 items-center border-[#EAECF0] px-3 flex-wrap justify-between gap-3">
+                    <p class="">الإضافة</p>
+                    <input type="checkbox" class="child-checkbox w-[20px] h-[20px] text-blue-600 border-gray-300 rounded-[6px] focus:ring-blue-500">
+                </li>
+                <li class="flex font-semibold py-2 items-center px-3 flex-wrap justify-between gap-3">
+                    <p class="">الحذف</p>
+                    <input type="checkbox" class="child-checkbox w-[20px] h-[20px] text-blue-600 border-gray-300 rounded-[6px] focus:ring-blue-500">
+                </li>
             </ul>
-
-          </div>
-
-          <div class="col-span-5 md:col-span-1  border border-[#EAECF0] rounded-[12px]">
-            <div class="flex p-3 justify-between gap-3 w-full items-center bg-[#F9FAFB] border-b border-[#EAECF0] pb-3">
-              <h4 class="text-[#475467] font-semibold">ادارة المستخدمين</h4>
-              <input id="checkbox-1" type="checkbox" value="" class=" w-[20px] h-[20px]  rounded-[6px] text-blue-600  border-gray-300  focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 dark:focus:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600" >
-            </div>
-            <ul >
-              <li class="flex font-semibold border-b py-2 items-center border-[#EAECF0] px-3 flex-wrap justify-between gap-3">
-                <p class="">القراءة</p>
-                <input id="checkbox-1" type="checkbox" value="" class=" w-[20px] h-[20px] text-blue-600  border-gray-300 rounded-[6px] focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 dark:focus:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600" >
-              </li>
-              <li class="flex font-semibold border-b py-2 items-center border-[#EAECF0] px-3 flex-wrap justify-between gap-3">
-                <p class="">التعديل</p>
-                <input id="checkbox-1" type="checkbox" value="" class=" w-[20px] h-[20px] text-blue-600  border-gray-300 rounded-[6px] focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 dark:focus:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600" >
-              </li>
-              <li class="flex font-semibold border-b py-2 items-center border-[#EAECF0] px-3 flex-wrap justify-between gap-3">
-                <p class="">الإضافة</p>
-                <input id="checkbox-1" type="checkbox" value="" class=" w-[20px] h-[20px] text-blue-600  border-gray-300 rounded-[6px] focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 dark:focus:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600" >
-              </li>
-              <li class="flex font-semibold py-2 items-center px-3 flex-wrap justify-between gap-3">
-                <p class="">الحذف</p>
-                <input id="checkbox-1" type="checkbox" value="" class=" w-[20px] h-[20px] text-blue-600  border-gray-300 rounded-[6px] focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 dark:focus:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600" >
-              </li>
-            </ul>
-
-          </div>
-
-          <div class="col-span-5 md:col-span-1  border border-[#EAECF0] rounded-[12px]">
-            <div class="flex p-3 justify-between gap-3 w-full items-center bg-[#F9FAFB] border-b border-[#EAECF0] pb-3">
-              <h4 class="text-[#475467] font-semibold">ادارة المستخدمين</h4>
-              <input id="checkbox-1" type="checkbox" value="" class=" w-[20px] h-[20px]  rounded-[6px] text-blue-600  border-gray-300  focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 dark:focus:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600" >
-            </div>
-            <ul >
-              <li class="flex font-semibold border-b py-2 items-center border-[#EAECF0] px-3 flex-wrap justify-between gap-3">
-                <p class="">القراءة</p>
-                <input id="checkbox-1" type="checkbox" value="" class=" w-[20px] h-[20px] text-blue-600  border-gray-300 rounded-[6px] focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 dark:focus:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600" >
-              </li>
-              <li class="flex font-semibold border-b py-2 items-center border-[#EAECF0] px-3 flex-wrap justify-between gap-3">
-                <p class="">التعديل</p>
-                <input id="checkbox-1" type="checkbox" value="" class=" w-[20px] h-[20px] text-blue-600  border-gray-300 rounded-[6px] focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 dark:focus:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600" >
-              </li>
-              <li class="flex font-semibold border-b py-2 items-center border-[#EAECF0] px-3 flex-wrap justify-between gap-3">
-                <p class="">الإضافة</p>
-                <input id="checkbox-1" type="checkbox" value="" class=" w-[20px] h-[20px] text-blue-600  border-gray-300 rounded-[6px] focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 dark:focus:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600" >
-              </li>
-              <li class="flex font-semibold py-2 items-center px-3 flex-wrap justify-between gap-3">
-                <p class="">الحذف</p>
-                <input id="checkbox-1" type="checkbox" value="" class=" w-[20px] h-[20px] text-blue-600  border-gray-300 rounded-[6px] focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 dark:focus:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600" >
-              </li>
-            </ul>
-
-          </div>
-
-          <div class="col-span-5 md:col-span-1  border border-[#EAECF0] rounded-[12px]">
-            <div class="flex p-3 justify-between gap-3 w-full items-center bg-[#F9FAFB] border-b border-[#EAECF0] pb-3">
-              <h4 class="text-[#475467] font-semibold">ادارة المستخدمين</h4>
-              <input id="checkbox-1" type="checkbox" value="" class=" w-[20px] h-[20px]  rounded-[6px] text-blue-600  border-gray-300  focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 dark:focus:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600" >
-            </div>
-            <ul >
-              <li class="flex font-semibold border-b py-2 items-center border-[#EAECF0] px-3 flex-wrap justify-between gap-3">
-                <p class="">القراءة</p>
-                <input id="checkbox-1" type="checkbox" value="" class=" w-[20px] h-[20px] text-blue-600  border-gray-300 rounded-[6px] focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 dark:focus:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600" >
-              </li>
-              <li class="flex font-semibold border-b py-2 items-center border-[#EAECF0] px-3 flex-wrap justify-between gap-3">
-                <p class="">التعديل</p>
-                <input id="checkbox-1" type="checkbox" value="" class=" w-[20px] h-[20px] text-blue-600  border-gray-300 rounded-[6px] focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 dark:focus:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600" >
-              </li>
-              <li class="flex font-semibold border-b py-2 items-center border-[#EAECF0] px-3 flex-wrap justify-between gap-3">
-                <p class="">الإضافة</p>
-                <input id="checkbox-1" type="checkbox" value="" class=" w-[20px] h-[20px] text-blue-600  border-gray-300 rounded-[6px] focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 dark:focus:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600" >
-              </li>
-              <li class="flex font-semibold py-2 items-center px-3 flex-wrap justify-between gap-3">
-                <p class="">الحذف</p>
-                <input id="checkbox-1" type="checkbox" value="" class=" w-[20px] h-[20px] text-blue-600  border-gray-300 rounded-[6px] focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 dark:focus:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600" >
-              </li>
-            </ul>
-
-          </div>
-
-          
-        
-      
-
-
-
-      </div>
+        </div>
+        <!-- Repeat the above block for each card -->
+    </div>
 
       <!-- Pagination -->
 
@@ -482,5 +392,25 @@
 
     </div>
     <script defer src="../../sidebar.js"></script>
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+    // Select all header checkboxes
+    const headerCheckboxes = document.querySelectorAll('.header-checkbox');
+
+    headerCheckboxes.forEach(headerCheckbox => {
+        headerCheckbox.addEventListener('change', function() {
+            // Find the parent card of the header checkbox
+            const card = this.closest('.col-span-5.md\\:col-span-1');
+            // Select all child checkboxes within the same card
+            const childCheckboxes = card.querySelectorAll('.child-checkbox');
+
+            // Check or uncheck all child checkboxes based on the header checkbox state
+            childCheckboxes.forEach(childCheckbox => {
+                childCheckbox.checked = this.checked;
+            });
+        });
+    });
+});
+    </script>
   </body>
 </html>
