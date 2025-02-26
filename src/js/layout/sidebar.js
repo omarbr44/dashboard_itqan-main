@@ -132,8 +132,8 @@ class Sidebar extends HTMLElement {
       },
       {
         title: "إدارة المستخدمين",
-        href: "../../../pages/",
-        active: currentPage === "pages/users-role.html",
+        href: "../../../pages/settings/users.html",
+        active: currentPage === "pages/settings/users.html",
         icon: `
         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
 <path d="M9.15859 10.87C9.05859 10.86 8.93859 10.86 8.82859 10.87C6.44859 10.79 4.55859 8.84 4.55859 6.44C4.55859 3.99 6.53859 2 8.99859 2C11.4486 2 13.4386 3.99 13.4386 6.44C13.4286 8.84 11.5386 10.79 9.15859 10.87Z" stroke="black" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
@@ -204,7 +204,7 @@ class Sidebar extends HTMLElement {
         <!-- Sidebar Toggle Button (Visible on Small Screens) -->
         <button
           onclick="toggleSidebarr()"
-          class="sm:hidden fixed top-4 right-10 ms-2 z-50 p-2 bg-gray-200 rounded-lg"
+          class="sm:hidden fixed top-4 right-2 ms-2 z-50 p-2 rounded-lg"
         >
           <svg
             width="24"
@@ -232,7 +232,7 @@ class Sidebar extends HTMLElement {
         >
           <div class="h-full px-3 pb-4 overflow-y-auto">
             <!-- Logo and Close Button -->
-            <div class="flex gap-x-6 mt-4 justify-center">
+            <div class=" gap-x-6 mt-4 justify-center hidden sm:flex">
               <button onclick="toggleSidebar()">
                 <svg
                   width="24"
@@ -260,8 +260,8 @@ class Sidebar extends HTMLElement {
                 <li>
                   <a
                     href="${item.href}"
-                    class="flex items-center p-2 rounded-lg group ${
-                      item.active ? 'bg-[#377DFF] text-white' : 'text-gray-700'
+                    class="flex items-center p-2 rounded-lg group  ${
+                      item.active ? 'bg-[#377DFF] text-white' : 'text-gray-700 hover:bg-gray-100'
                     }"
                   >
                     <span>${item.icon}</span>

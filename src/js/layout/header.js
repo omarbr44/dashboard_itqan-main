@@ -42,12 +42,10 @@ class Header extends HTMLElement {
 <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.3.0/flowbite.min.js"></script>
 </head>
       <header>
-      <nav class="fixed top-0 z-50 w-full h-[80px] bg-white border-b border-gray-200">
+      <nav class="fixed top-0 z-50 w-full bg-white border-b border-gray-200">
       <div class="px-3 py-3 lg:px-5 lg:pl-3">
-        <div class="flex items-center justify-end sm:justify-between">
-  
-
-          <div class="flex items-center justify-start rtl:justify-end">
+        <div class="flex items-center justify-end sm:justify-between flex-wrap">
+          <div class="flex items-center justify-start rtl:justify-end w-full sm:w-fit">
             <a href="../../../pages/user/profile.html" class="flex ms-2 md:me-24">
               <img src=${
                 this.img || "../../src/images/icons/avatar.png"
@@ -75,7 +73,7 @@ class Header extends HTMLElement {
           </div>
 
           <!--* Icons  -->
-          <div class=" gap-x-10 mx-5 hidden sm:flex relative">
+          <div class=" gap-x-10 mx-5 flex relative ml-auto">
           <!-- Pell Icon -->
           <button id="pell-icon" class="focus:outline-none">
           <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -127,20 +125,14 @@ class Header extends HTMLElement {
             
     
       <!-- <div class="flex">
-        <button type="button" data-collapse-toggle="navbar-search" aria-controls="navbar-search" aria-expanded="false" class="md:hidden text-gray-500  hover:bg-gray-100  focus:outline-none focus:ring-4 focus:ring-gray-200  rounded-lg text-sm p-2.5 me-1">
+        <button type="button" data-collapse-toggle="navbar-search" aria-controls="navbar-search" aria-expanded="false" class="hidden text-gray-500  hover:bg-gray-100  focus:outline-none focus:ring-4 focus:ring-gray-200  rounded-lg text-sm p-2.5 me-1">
           <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20">
             <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z"/>
           </svg>
         </button>
          -->
-    
-    
-    
-    
-    
-    
-    
-          <div class="hidden sm:flex items-center">
+
+          <div class=" sm:flex items-center">
               <div class="flex items-center ms-3">
               <div class="flex items-center md:order-2 space-x-1 md:space-x-0 rtl:space-x-reverse">
           <button type="button" data-dropdown-toggle="language-dropdown-menu" class="inline-flex items-center font-medium justify-center px-4 py-2 text-sm text-gray-900 rounded-lg cursor-pointer hover:bg-gray-100">

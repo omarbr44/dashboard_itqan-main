@@ -2014,8 +2014,8 @@ input:checked + .toggle-bg {
 
 .w-fit {
   width: -moz-fit-content;
-  width: fit-content;
-}
+ width: fit-content;
+} 
 
 .w-full {
   width: 100%;
@@ -3463,6 +3463,11 @@ input:checked + .toggle-bg {
   .sm\:inline-flex {
     display: inline-flex;
   }
+  .sm\:w-fit {
+    width: -moz-fit-content;
+   width: fit-content !important;
+  } 
+  
 
   .sm\:hidden {
     display: none;

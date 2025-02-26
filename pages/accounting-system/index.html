@@ -444,6 +444,26 @@
         },
       ];
       table.img = "../../src/images/icons/avatar.png";
+
+      document.addEventListener('DOMContentLoaded', function() {
+    const openMenuButtons = document.querySelectorAll('.open-menu');
+    
+    openMenuButtons.forEach(button => {
+        button.addEventListener('click', function(event) {
+            event.stopPropagation(); // Prevent the click from bubbling up
+            const menu = this.nextElementSibling; // Assuming the menu is the next sibling
+            menu.classList.toggle('show');
+        });
+    });
+
+    // Close the menu when clicking outside of it
+    document.addEventListener('click', function() {
+        const menus = document.querySelectorAll('.menu');
+        menus.forEach(menu => {
+            menu.classList.remove('show');
+        });
+    });
+});
     </script>
 
     <script src="../../main.js"></script>
