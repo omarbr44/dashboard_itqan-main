@@ -12,11 +12,16 @@ class Sidebar extends HTMLElement {
 
   toggleSidebarr() {
     this.isSidebarOpen = !this.isSidebarOpen;
+    const burgerIcon = document.getElementById('burger-icon')
+    const closeIcon = document.getElementById('close-icon')
+     // Toggle icons visibility
+    burgerIcon.classList.toggle('hidden')
+    closeIcon.classList.toggle('hidden')
     this.render();
   }
 
   addEventListeners() {
-    this.querySelector('button[onclick="toggleSidebarr()"]')?.addEventListener('click', () => this.toggleSidebarr());
+    this.querySelector('#sidebar-button')?.addEventListener('click', () => this.toggleSidebarr());
   }
 
   render() {
@@ -203,10 +208,12 @@ class Sidebar extends HTMLElement {
       <div>
         <!-- Sidebar Toggle Button (Visible on Small Screens) -->
         <button
-          onclick="toggleSidebarr()"
+          id="sidebar-button"
           class="sm:hidden fixed top-4 right-2 ms-2 z-50 p-2 rounded-lg"
         >
           <svg
+            id="burger-icon"
+            class=""
             width="24"
             height="24"
             viewBox="0 0 24 24"
@@ -219,6 +226,10 @@ class Sidebar extends HTMLElement {
             <path d="M3 12H21" stroke="#292D32" stroke-width="1.5" stroke-linecap="round" />
             <path d="M3 17H21H3Z" fill="black" />
             <path d="M3 17H21" stroke="#292D32" stroke-width="1.5" stroke-linecap="round" />
+          </svg>
+          <svg id="close-icon"
+            class="hidden" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="100" height="100" viewBox="0,0,256,256">
+            <g fill="#5d6064" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal"><g transform="scale(5.12,5.12)"><path d="M9.15625,6.3125l-2.84375,2.84375l15.84375,15.84375l-15.9375,15.96875l2.8125,2.8125l15.96875,-15.9375l15.9375,15.9375l2.84375,-2.84375l-15.9375,-15.9375l15.84375,-15.84375l-2.84375,-2.84375l-15.84375,15.84375z"></path></g></g>
           </svg>
         </button>
 

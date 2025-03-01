@@ -87,7 +87,7 @@ class Table extends HTMLElement {
                     .join('')}
                   <td class="px-6 py-4 text-[#475467]">
                     <div>
-                      <button id="dropdownActionButton" data-dropdown-toggle="dropdownAction${index}" class="inline-flex items-center" type="button">
+                      <button id="dropdownActionButton" data-dropdown-toggle="dropdownAction${index}" class="dropdownActionButton inline-flex items-center" type="button">
                         <span class="sr-only">Action button</span>
                         <svg class="cursor-pointer" width="23" height="23" viewBox="0 0 23 23" fill="none" xmlns="http://www.w3.org/2000/svg">
                           <path d="M9.48828 17.6115C9.48828 18.6126 10.3074 19.4316 11.3085 19.4316C12.3096 19.4316 13.1286 18.6126 13.1286 17.6115C13.1286 16.6104 12.3096 15.7913 11.3085 15.7913C10.3074 15.7913 9.48828 16.6104 9.48828 17.6115Z" stroke="#292D32" stroke-width="1.63816"/>
@@ -96,7 +96,7 @@ class Table extends HTMLElement {
                         </svg>
                       </button>
                       <!-- Dropdown menu -->
-                      <div id="dropdownAction${index}" class="z-10 hidden bg-white divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-700 dark:divide-gray-600 absolute left-0">
+                      <div id="dropdownAction${index}" class="dropdownAction z-10 hidden bg-white divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-700 dark:divide-gray-600 absolute left-0">
                         <ul class="py-1 text-sm text-gray-700 dark:text-gray-200" aria-labelledby="dropdownActionButton">
                           <li data-modal-target="popup-modal" data-modal-toggle="popup-modal" class="flex items-center gap-x-2 px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white cursor-pointer">
                             <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -236,13 +236,25 @@ class Table extends HTMLElement {
   initializeDropdowns() {
     // Initialize dropdowns using Flowbite or your preferred library
     const dropdownButtons = this.querySelectorAll('[data-dropdown-toggle]');
+
     dropdownButtons.forEach((button) => {
-      button.addEventListener('click', () => {
-        const dropdownId = button.getAttribute('data-dropdown-toggle');
-        const dropdown = this.querySelector(`#${dropdownId}`);
-        dropdown.classList.toggle('hidden');
+    button.addEventListener('click', () => {
+      const dropdownId = button.getAttribute('data-dropdown-toggle');
+      const dropdown = this.querySelector(`#${dropdownId}`);
+
+      // Hide all other dropdowns
+      this.querySelectorAll('.dropdownActionButton').forEach((otherDropdown) => {
+        if (otherDropdown.getAttribute('data-dropdown-toggle') !== dropdownId) {
+          console.log(otherDropdown.id)
+          this.querySelector(`#${otherDropdown.getAttribute('data-dropdown-toggle')}`).classList.add('hidden');
+        }
       });
+
+      // Toggle the clicked dropdown
+      dropdown.classList.toggle('hidden');
     });
+  });
+  
   }
 }
 
