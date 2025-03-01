@@ -25,7 +25,13 @@ class Sidebar extends HTMLElement {
   }
 
   render() {
-    const currentPage = window.location.pathname.split('/').splice(6).join('/'); // Get current path (for active links)
+    const url = window.location.pathname.split('/'); // Get current path (for active links)
+    let currentPage;
+    if(url[url.length - 1] == 'index.html')
+      currentPage = url[url.length - 2] + '/' + url[url.length - 1]
+    else
+      currentPage = url[url.length - 1]
+    console.log(currentPage)
     const menu = [
       {
         title: "الصفحة الرئيسية",
@@ -61,7 +67,7 @@ class Sidebar extends HTMLElement {
       {
         title: "خدمات إتقان",
         href: "../../../pages/settings/general-settings.html",
-        active: currentPage === "pages/settings/general-settings.html",
+        active: currentPage === "general-settings.html",
         icon: `
           <svg
             width="24"
@@ -97,7 +103,7 @@ class Sidebar extends HTMLElement {
       {
         title: "نظام إتقان المحاسبي",
         href: "../../../pages/accounting-system/index.html",
-        active: currentPage === "pages/accounting-system/index.html",
+        active: currentPage === "accounting-system/index.html" || "add-bill.html",
         icon: `
 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
 <path d="M4.2016 16.9274L4.20167 16.9272C3.45775 16.6446 2.8821 16.1743 2.50092 15.5046C2.12562 14.8453 1.9592 14.029 1.9592 13.0798V7.92975C1.9592 6.62685 2.27424 5.5626 3.00814 4.82871C3.74205 4.09482 4.8063 3.77979 6.10919 3.77979H14.8992C15.9846 3.77979 16.9019 3.99605 17.6047 4.4944C18.3181 5.00027 18.7495 5.75335 18.9392 6.70013C18.9393 6.70065 18.9394 6.70117 18.9395 6.70169L18.4492 6.79974C18.5192 7.13974 18.5492 7.50975 18.5492 7.92975V13.0798C18.5492 15.5398 17.3592 16.7297 14.8992 16.7297H6.10919C5.69919 16.7297 5.32922 16.6897 4.94922 16.6097L4.2016 16.9274ZM4.2016 16.9274L4.21404 16.9317C4.43317 17.0084 4.64749 17.0656 4.85636 17.1011L4.2016 16.9274ZM4.76001 17.5822L4.73713 17.577L4.71387 17.574C4.53719 17.5509 4.29749 17.485 4.02654 17.3822L4.02516 17.3817C3.42513 17.1561 2.78932 16.7731 2.3019 16.1167C1.8171 15.4638 1.44922 14.5004 1.44922 13.0598V7.90973C1.44922 6.36955 1.89025 5.22331 2.65152 4.46205C3.41279 3.70079 4.55903 3.25977 6.09921 3.25977H14.8892C16.1916 3.25977 17.2137 3.5709 17.9565 4.12145C18.6938 4.66789 19.1998 5.48237 19.4189 6.5778L19.4194 6.57993C19.5011 6.97976 19.5392 7.41514 19.5392 7.90973V13.0598C19.5392 14.6114 19.0999 15.7597 18.3404 16.5202C17.5811 17.2806 16.4355 17.7197 14.8892 17.7197H6.09921C5.61018 17.7197 5.15797 17.6726 4.76001 17.5822Z" fill="white" stroke="black"/>
