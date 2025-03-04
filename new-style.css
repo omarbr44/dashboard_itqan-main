@@ -100,10 +100,23 @@ input, select {
 .phone-input {
   display: flex;
   gap: 10px;
+  position: relative;
 }
-
-.phone-input select {
-  width: 30%;
+.phone-input input{
+  padding: 0 90px;
+}
+.phone-code {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  padding: 0 10px;
+  border-right: 1px solid #6b7280;
+  color: #6b7280;
+  height: 100%;
+  display: flex;
+  gap: 8px;
+  align-items: center;
 }
 
 .password-input {
@@ -145,14 +158,6 @@ button[type="submit"]:hover {
 
 .hidden {
   display: none;
-}
-.iti {
-  width: 100%;
-}
-.iti__tel-input {
-  padding: 10px 13px;
-  width: 100%;
-  direction: rtl;
 }
 a {
   text-decoration: none;
