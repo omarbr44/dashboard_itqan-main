@@ -30,7 +30,6 @@ class Header extends HTMLElement {
 
   render() {
     const title = this.getAttribute('title') || '';
-    const img = this.getAttribute('img') || '../../src/images/icons/avatar.png';
     const namee = this.getAttribute('namee') || '';
     const role = this.getAttribute('role') || '';
 
@@ -48,7 +47,7 @@ class Header extends HTMLElement {
           <div class="flex items-center justify-start rtl:justify-end w-full sm:w-fit">
             <a href="../../../pages/user/profile.html" class="flex ms-2 md:me-24">
               <img src=${
-                this.img || "../../src/images/icons/avatar.png"
+                this.getAttribute('img') || "../../src/images/icons/avatar.png"
               } class="h-[60px] me-3" alt="avatar Logo" />
               <div class='flex flex-col'>
               <span class=" text-xl font-semibold sm:text-[20px] whitespace-nowrap">${

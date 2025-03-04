@@ -32,7 +32,7 @@ class OrderBox extends HTMLElement {
     <!-- Content -->
     <div class="flex items-center gap-x-2">
         <div style="${bgCard}" class=" w-[50px] h-[50px] flex items-center justify-center rounded-[8px]">
-            <img src="../../src/images/icons/${this.getAttribute('img')}.png" alt="" class="w-[36px]">
+            <img src="${this.getAttribute('img')}" alt="" class="w-[36px]">
         </div>
         <span class="font-medium text-[36px] text-[#12161C]">${this.getAttribute('count')}</span>
     </div>

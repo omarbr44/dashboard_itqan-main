@@ -7,7 +7,15 @@
     <link rel="stylesheet" href="./style.css" />
 
     <link href="./src/css/output.css" rel="stylesheet" />
-    <script type="module" src="./src/js/index.js" defer></script>
+    <!-- <script type="module" src="./src/js/index.js" defer></script> -->
+    <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
+    <script src="src/js/layout/sidebar.js" ></script>
+    <script src="src/js/layout/header.js" ></script>
+    <script src="src/js/layout/layout.js" ></script>
+    <script src="src/js/shared/steper.js" ></script>
+    <script src="src/js/shared/table.js" ></script>
+    <script src="src/js/atoms/orderBox/orderBox.js" ></script>
+    <script src="src/js/atoms/dashBox/dashBox.js" ></script>
     <!-- fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -17,16 +25,23 @@
     />
   </head>
   <body dir="rtl">
-    <main-layout />
+    <main-header
+    namee="محمد الشريف"
+    role="مشرف رئيسى"
+    img="src/images/icons/avatar.png"
+    />
+    <main-layout
+    logo="src/images/logo.png"
+    />
     <div class="p-4 sm:mr-64" id="main-body">
       <div
         class="p-4 border-2 border-gray-200 rounded-lg dark:border-gray-700 mt-14"
       >
         <page-steper
-          baseStep="../../src/images/icons/home.png"
-          firstStep="../../src/images/icons/dashCategory.png"
+          baseStep="src/images/icons/home.png"
+          firstStep="src/images/icons/dashCategory.png"
           firstTitle="لوحة التحكم"
-          secStep="../../src/images/icons/elecZi.png"
+          secStep="src/images/icons/elecZi.png"
           secTitle="طلب خدمات متكاملة"
           backHref="#"
           backTitle="رجوع الصفحة السابقة"
@@ -44,7 +59,7 @@
               content="نبحث عن خدمات احترافية وشاملة تغطي مجالات تقنية المعلومات، الدعم القانوني، والخدمات التسويقية."
               bg="#E2FBD7"
               button="انشىء طلب خدمة"
-              img="../../src/images/icons/rocket.png"
+              img="src/images/icons/rocket.png"
               firstSec="true"
               href="./pages/control-services/Request-integrated-services.html"
             />
@@ -59,7 +74,7 @@
               content="قائمة الطلبات تضم طلبات جديدة قيد التنفيذ، وأخرى تحت المراجعة لضمان جودتها، بالإضافة إلى الطلبات المكتملة التي تم تسليمها بنجاح."
               bg="#FFF0BF"
               button="المزيد"
-              img="../../../src/images/icons/note.png"
+              img="src/images/icons/note.png"
             />
           </div>
 
@@ -72,7 +87,7 @@
               content="هو نظام متكامل يهدف إلى تحسين الدقة والكفاءة في إدارة العمليات المالية والمحاسبية باستخدام تقنيات متطورة."
               bg="#F1EDFE"
               button="الدخول إلى النظام"
-              img="../../../src/images/icons/trendArrow.png"
+              img="src/images/icons/trendArrow.png"
             />
           </div>
 
@@ -85,7 +100,7 @@
               content="نظام متكامل لإدارة شؤون الموظفين والعمليات المتعلقة بالتوظيف، والتدريب، وتقييم الأداء، والرواتب، والتطوير داخل المؤسسات."
               bg="#B1E2FE"
               button="الدخول إلى النظام"
-              img="../../../src/images/icons/users.png"
+              img="src/images/icons/users.png"
             />
           </div>
         </div>
@@ -100,7 +115,7 @@
           >
             <order-box
               title="المسودات"
-              img="paper"
+              img="src/images/icons/paper.png"
               bg="#F8F0E9"
               count="42"
               rate="18.2"
@@ -115,7 +130,7 @@
           >
             <order-box
               title="قيد المراجعة"
-              img="home"
+              img="src/images/icons/home.png"
               bg="#EAECF5"
               count="16"
               rate="30.2"
@@ -129,7 +144,7 @@
           >
             <order-box
               title="الطلبات المكتملة"
-              img="widgetBox"
+              img="src/images/icons/widgetBox.png"
               bg="#E6F6F4"
               count="30"
               rate="18.2"
@@ -145,7 +160,7 @@
           >
             <order-box
               title="الطلبات قيد المعالجة"
-              img="timer"
+              img="src/images/icons/timer.png"
               bg="#F4EBFF"
               count="42"
               rate="11.2"
@@ -160,7 +175,7 @@
           >
             <order-box
               title="الطلبات المرفوضة"
-              img="rejected"
+              img="src/images/icons/rejected.png"
               bg="#FDE9EA"
               count="10"
               rate="10.2"
@@ -176,7 +191,7 @@
           >
             <order-box
               title="كل الطلبات"
-              img="taskNote"
+              img="src/images/icons/taskNote.png"
               bg="#EBF2FF"
               count="100"
               rate="80.2"
@@ -197,7 +212,40 @@
         <!-- End Chart -->
 
         <!-- Table -->
-        <table-builder title="الرسائل" id="table"></table-builder>
+        <!-- Table -->
+        <table-builder
+        id="table"
+        addTitle="اضافة فاتورة جديد"
+        filter="true"
+        printer="true"
+        title="الرسائل"
+        img="src/images/icons/avatar.png"
+        columns="الاسم,البريد الإلكتروني,رقم الهاتف,العنوان,تاريخ الانضمام,الحالة"
+        rows='
+        [
+{"name": "John Doe", "email": "john.doe@example.com", "phone": "1234567890", "address": "123 Main St, Cityville", "joinDate": "2023-01-01", "status": "نشط"},
+{"name": "Jane Smith", "email": "jane.smith@example.com", "phone": "2345678901", "address": "456 Elm St, Townsville", "joinDate": "2023-02-15", "status": "نشط"},
+{"name": "Alice Johnson", "email": "alice.johnson@example.com", "phone": "3456789012", "address": "789 Oak St, Villageton", "joinDate": "2023-03-10", "status": "غير نشط"},
+{"name": "Bob Brown", "email": "bob.brown@example.com", "phone": "4567890123", "address": "101 Pine St, Hamletville", "joinDate": "2023-04-05", "status": "نشط"},
+{"name": "Charlie Davis", "email": "charlie.davis@example.com", "phone": "5678901234", "address": "202 Maple St, Countryside", "joinDate": "2023-05-20", "status": "نشط"},
+{"name": "Diana Evans", "email": "diana.evans@example.com", "phone": "6789012345", "address": "303 Birch St, Suburbia", "joinDate": "2023-06-25", "status": "غير نشط"},
+{"name": "Eve Wilson", "email": "eve.wilson@example.com", "phone": "7890123456", "address": "404 Cedar St, Metropolis", "joinDate": "2023-07-30", "status": "نشط"},
+{"name": "Frank Moore", "email": "frank.moore@example.com", "phone": "8901234567", "address": "505 Redwood St, Urbania", "joinDate": "2023-08-12", "status": "نشط"},
+{"name": "Grace Taylor", "email": "grace.taylor@example.com", "phone": "9012345678", "address": "606 Spruce St, Downtown", "joinDate": "2023-09-18", "status": "غير نشط"},
+{"name": "Hank Martinez", "email": "hank.martinez@example.com", "phone": "0123456789", "address": "707 Fir St, Uptown", "joinDate": "2023-10-22", "status": "نشط"},
+{"name": "Ivy Anderson", "email": "ivy.anderson@example.com", "phone": "1234509876", "address": "808 Willow St, Midtown", "joinDate": "2023-11-05", "status": "نشط"},
+{"name": "Jack White", "email": "jack.white@example.com", "phone": "2345610987", "address": "909 Palm St, Riverside", "joinDate": "2023-12-10", "status": "غير نشط"},
+{"name": "Karen Harris", "email": "karen.harris@example.com", "phone": "3456721098", "address": "1010 Oak St, Lakeside", "joinDate": "2024-01-15", "status": "نشط"},
+{"name": "Leo Clark", "email": "leo.clark@example.com", "phone": "4567832109", "address": "1111 Pine St, Hillside", "joinDate": "2024-02-20", "status": "نشط"},
+{"name": "Mia Lewis", "email": "mia.lewis@example.com", "phone": "5678943210", "address": "1212 Maple St, Countryside", "joinDate": "2024-03-25", "status": "غير نشط"},
+{"name": "Noah Walker", "email": "noah.walker@example.com", "phone": "6789054321", "address": "1313 Birch St, Suburbia", "joinDate": "2024-04-30", "status": "نشط"},
+{"name": "Olivia Hall", "email": "olivia.hall@example.com", "phone": "7890165432", "address": "1414 Cedar St, Metropolis", "joinDate": "2024-05-05", "status": "نشط"},
+{"name": "Paul Allen", "email": "paul.allen@example.com", "phone": "8901276543", "address": "1515 Redwood St, Urbania", "joinDate": "2024-06-10", "status": "غير نشط"},
+{"name": "Quinn Young", "email": "quinn.young@example.com", "phone": "9012387654", "address": "1616 Spruce St, Downtown", "joinDate": "2024-07-15", "status": "نشط"},
+{"name": "Rachel King", "email": "rachel.king@example.com", "phone": "0123498765", "address": "1717 Fir St, Uptown", "joinDate": "2024-08-20", "status": "نشط"}
+]
+        '
+        ></table-builder>
       </div>
     </div>
     <script defer>
@@ -227,6 +275,29 @@
         },
       ];
       table.img = '../../src/images/icons/avatar.png';
+
+      document.addEventListener('DOMContentLoaded', function() {
+    const openMenuButtons = document.querySelectorAll('.open-menu');
+    
+    openMenuButtons.forEach(button => {
+        button.addEventListener('click', function(event) {
+            event.stopPropagation(); // Prevent the click from bubbling up
+            const menu = this.nextElementSibling; // Assuming the menu is the next sibling
+            menu.classList.toggle('show');
+        });
+    });
+
+    // Close the menu when clicking outside of it
+    document.addEventListener('click', function() {
+        const menus = document.querySelectorAll('.menu');
+        menus.forEach(menu => {
+            menu.classList.remove('show');
+        });
+    });
+});
     </script>
+    <script src="main.js"></script>
+    <script src="src/js/atoms/apexChart/apexBar.js"></script>
+    <script src="src/js/atoms/apexChart/apexLine.js"></script>
   </body>
 </html>

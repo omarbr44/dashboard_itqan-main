@@ -9,7 +9,7 @@ class Layout extends HTMLElement {
 
   render() {
     const userImage = "../../src/images/icons/avatar.png";
-    const logo = "../../src/images/logo.png";
+    const logo = this.getAttribute('logo') || "../../src/images/logo.png";
 
     this.innerHTML = `
         <head>

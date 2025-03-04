@@ -1,23 +1,15 @@
-import { LitElement, html, css } from 'lit';
+class DashBox extends HTMLElement {
+  constructor() {
+    super();
+  }
 
-export class DashBox extends LitElement {
-  static properties = {
-    bg: { type: String },
-    title: { type: String },
-    content: { type: String },
-    button: { type: String },
-    img: { type: String },
-    firstSec: { type: Boolean },
-    href: { type: String },
-  };
-
-  createRenderRoot() {
-    return this;
+  connectedCallback() {
+    this.render();
   }
 
   render() {
-    const button = this.firstSec
-      ? html`<a href="${this.href}">
+    const button = this.getAttribute('firstSec')
+      ? `<a href="${this.getAttribute('href')}">
           <button class="bg-[#377DFF] w-full text-[14px] p-[16px] rounded-[6px] flex gap-[8px] justify-center items-center mt-3 font-bold">
             <svg
               width="24"
@@ -38,12 +30,12 @@ export class DashBox extends LitElement {
           </button>
           </a>
         `
-      : html`
-      <a href="${this.href}">
+      : `
+      <a href="${this.getAttribute('href')}">
           <button
             class="border border-[#377DFF] w-full text-[14px] p-[16px] rounded-[6px] flex gap-[8px] justify-center items-center mt-3 font-bold"
           >
-            <p class="text-[#377DFF]">${this.button}</p>
+            <p class="text-[#377DFF]">${this.getAttribute('button')}</p>
             <svg
               width="17"
               height="17"
@@ -63,22 +55,25 @@ export class DashBox extends LitElement {
           </a>
         `;
 
-    return html`
+
+    this.innerHTML = `
       <div>
         <div
           class="w-[75px] h-[75px] rounded-full flex justify-center items-center"
-          style="background-color: ${this.bg}"
+          style="background-color: ${this.getAttribute('bg')}"
         >
           <img
-            src=${this.img}
+            src=${this.getAttribute('img')}
             alt=""
             class="w-[33px]"
           />
         </div>
-        <h3 class="text-[18px] text-[#12161C] font-bold my-2">${this.title}</h3>
-        <p class="min-h-[100px] text-[14px] text-[#414447]">${this.content}</p>
+        <h3 class="text-[18px] text-[#12161C] font-bold my-2">${this.getAttribute('title')}</h3>
+        <p class="min-h-[100px] text-[14px] text-[#414447]">${this.getAttribute('content')}</p>
         ${button}
       </div>
-    `;
-  }
-}
+    `
+         }
+        }
+
+customElements.define('dash-box', DashBox);

@@ -1,4 +1,3 @@
-import ApexCharts from "apexcharts";
 var options = {
   series: [
     {
@@ -65,7 +64,7 @@ var options = {
     },
   },
   yaxis: {
-    max: 1000, 
+    max: 1000,
   },
   legend: {
     show: false,
@@ -73,4 +72,4 @@ var options = {
 };
 
 var chart = new ApexCharts(document.querySelector('#chartLine'), options);
-export default chart.render();
+chart.render();
