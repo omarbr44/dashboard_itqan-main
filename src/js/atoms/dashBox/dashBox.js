@@ -10,7 +10,7 @@ class DashBox extends HTMLElement {
   render() {
     const button = this.getAttribute('firstSec')
       ? `<a href="${this.getAttribute('href')}">
-          <button class="bg-[#377DFF] w-full text-[14px] p-[16px] rounded-[6px] flex gap-[8px] justify-center items-center mt-3 font-bold">
+          <button class="bg-[#377DFF] hover:bg-[#2965d9] transition w-full text-[14px] p-[16px] rounded-[6px] flex gap-[8px] justify-center items-center mt-3 font-bold">
             <svg
               width="24"
               height="25"
@@ -33,7 +33,7 @@ class DashBox extends HTMLElement {
       : `
       <a href="${this.getAttribute('href')}">
           <button
-            class="border border-[#377DFF] w-full text-[14px] p-[16px] rounded-[6px] flex gap-[8px] justify-center items-center mt-3 font-bold"
+            class="border border-[#377DFF] hover:bg-gray-50 w-full text-[14px] p-[16px] rounded-[6px] flex gap-[8px] justify-center items-center mt-3 font-bold"
           >
             <p class="text-[#377DFF]">${this.getAttribute('button')}</p>
             <svg

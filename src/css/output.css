@@ -3120,6 +3120,20 @@ input:checked + .toggle-bg {
   background-color: rgb(30 66 159 / var(--tw-bg-opacity, 1));
 }
 
+.hover\:bg-blue-600:hover {
+  --tw-bg-opacity: 1;
+  background-color: #dce2ec;
+}
+
+.hover\:bg-\[\#2965d9\]:hover {
+  background-color: #2965d9;
+}
+
+.hover\:bg-\[\#377DFF\]:hover {
+  background-color: #377DFF;
+  color: white;
+}
+
 .hover\:bg-gray-100:hover {
   --tw-bg-opacity: 1;
   background-color: rgb(243 244 246 / var(--tw-bg-opacity, 1));

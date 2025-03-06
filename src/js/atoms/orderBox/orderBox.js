@@ -43,7 +43,7 @@ class OrderBox extends HTMLElement {
     </div>
 </div>
 <!-- Bottom Button -->
-<div class="${!this.getAttribute('more') && 'hidden'} bg-[#EBF2FF] cursor-pointer text-[#377DFF] font-medium h-[56px] flex justify-between items-center p-[10px] text-sm">
+<div class="${!this.getAttribute('more') && 'hidden'} bg-[#EBF2FF] hover:bg-blue-600 transition cursor-pointer text-[#377DFF] font-medium h-[56px] flex justify-between items-center p-[10px] text-sm">
     <p>التفاصيل</p>
     <svg class="cursor-pointer" width="16" height="17" viewBox="0 0 16 17" fill="none" xmlns="http://www.w3.org/2000/svg">
         <path d="M15 8.68945H1M1 8.68945L8 15.6895M1 8.68945L8 1.68945" stroke="#377DFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>

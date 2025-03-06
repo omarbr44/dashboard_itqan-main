@@ -272,24 +272,28 @@ class Sidebar extends HTMLElement {
 
             <!-- Menu Items -->
             <ul class="space-y-1 mt-3 font-medium">
-              ${menu
-                .map(
-                  (item) => `
-                <li>
-                  <a
-                    href="${item.href}"
-                    class="flex items-center p-2 rounded-lg group  ${
-                      item.active ? 'bg-[#377DFF] text-white' : 'text-gray-700 hover:bg-gray-100'
-                    }"
-                  >
-                    <span>${item.icon}</span>
-                    <span class="ms-3 text-[14px] sidebar-list">${item.title}</span>
-                  </a>
-                </li>
-              `
-                )
-                .join('')}
-            </ul>
+  ${menu
+    .map(
+      (item) => `
+    <li class="relative group">
+      <a
+        href="${item.href}"
+        class="flex items-center p-2 rounded-lg ${
+          item.active ? 'bg-[#377DFF] text-white' : 'text-gray-700 hover:bg-gray-100'
+        }"
+      >
+        <span>${item.icon}</span>
+        <span class="ms-3 text-[14px] sidebar-list">${item.title}</span>
+      </a>
+      <!-- Tooltip -->
+      <div class="fixed right-full ml-2 w-fit px-2 py-1 bg-gray-800 text-white text-sm rounded opacity-0 group-hover:opacity-100 transition-opacity duration-200">
+        ${item.title}
+      </div>
+    </li>
+  `
+    )
+    .join('')}
+</ul>
           </div>
         </aside>
       </div>
