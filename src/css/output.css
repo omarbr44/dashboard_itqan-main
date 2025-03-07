@@ -1553,8 +1553,22 @@ input:checked + .toggle-bg {
   visibility: visible;
 }
 
+.tooltip-div {
+  position: absolute;
+  top: 5px;
+  right: 50px;
+  width: max-content;
+  background-color: #c3d1ee;
+  color: #377dff;
+  font-weight: bold;
+}
+
 .invisible {
   visibility: hidden;
+}
+
+.overflow-visible {
+  overflow: visible;
 }
 
 .collapse {

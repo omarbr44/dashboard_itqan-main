@@ -248,7 +248,7 @@ class Sidebar extends HTMLElement {
           }"
           aria-label="Sidebar"
         >
-          <div class="h-full px-3 pb-4 overflow-y-auto">
+          <div class="h-full px-3 pb-4 overflow-visible">
             <!-- Logo and Close Button -->
             <div class=" gap-x-6 mt-4 justify-center hidden sm:flex">
               <button onclick="toggleSidebar()">
@@ -286,7 +286,7 @@ class Sidebar extends HTMLElement {
         <span class="ms-3 text-[14px] sidebar-list">${item.title}</span>
       </a>
       <!-- Tooltip -->
-      <div class="fixed right-full ml-2 w-fit px-2 py-1 bg-gray-800 text-white text-sm rounded opacity-0 group-hover:opacity-100 transition-opacity duration-200">
+      <div class="tooltip-div ml-2 px-2 py-1 text-sm rounded opacity-0 group-hover:opacity-100 transition-opacity duration-200">
         ${item.title}
       </div>
     </li>
