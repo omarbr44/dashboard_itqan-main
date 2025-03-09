@@ -286,7 +286,7 @@ class Sidebar extends HTMLElement {
         <span class="ms-3 text-[14px] sidebar-list">${item.title}</span>
       </a>
       <!-- Tooltip -->
-      <div class="tooltip-div ml-2 px-2 py-1 text-sm rounded opacity-0 group-hover:opacity-100 transition-opacity duration-200">
+      <div class="sidebar-list hidden tooltip-div ml-2 px-2 py-1 text-sm rounded opacity-0 group-hover:opacity-100 transition-opacity duration-200">
         ${item.title}
       </div>
     </li>
