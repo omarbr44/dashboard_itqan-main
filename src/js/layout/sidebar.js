@@ -2,7 +2,11 @@ class Sidebar extends HTMLElement {
   constructor() {
     super();
     this.img = this.getAttribute('img') || "../../../src/images/logo.png"; // Default image
-    this.isSidebarOpen = true;
+    console.log(window.innerWidth)
+    if(window.innerWidth < 700)
+      this.isSidebarOpen = false;
+    else
+      this.isSidebarOpen = true;
   }
 
   connectedCallback() {
@@ -204,6 +208,8 @@ class Sidebar extends HTMLElement {
         `,
       },
     ];
+
+    
 
     this.innerHTML = `
     <style>
