@@ -11,10 +11,10 @@ function toggleSidebar() {
   })
       if(logo.classList.contains('hidden')) {
       logo.classList.remove('hidden')
-      mainBody.classList.remove('sm:mr-3')
+      mainBody.classList.remove('sm:mr-12')
     }
     else {
       logo.classList.add('hidden')
-      mainBody.classList.add('sm:mr-3')
+      mainBody.classList.add('sm:mr-12')
     }
   }
