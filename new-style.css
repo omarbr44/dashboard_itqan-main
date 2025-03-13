@@ -88,13 +88,17 @@ label {
 }
 input, select {
   width: 100%;
-  padding: 10px 13px;
   transition: .3s;
   background: #fff;
   min-height: 39px;
   line-height: 1;
   border-radius: 4px;
   box-sizing: border-box;
+  appearance: none;
+  border-color: #6b7280;
+  border-width: 1px;
+  padding: .5rem .75rem !important;
+  font-size: 1rem;
 }
 
 .phone-input {

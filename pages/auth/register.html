@@ -5,10 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>تسجيل الدخول / التسجيل</title>
     <!-- <link rel="stylesheet" href="styles.css"> -->
-    <link rel="stylesheet" href="https://cdn.hugeicons.com/font/hgi-stroke-rounded.css" />
     <link href="https://cdn.jsdelivr.net/npm/flowbite@3.1.1/dist/flowbite.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdn.hugeicons.com/font/hgi-stroke-rounded.css" />
     <link rel="stylesheet" href="../../new-style.css" />
 
+    <script src="https://cdn.jsdelivr.net/npm/flowbite@3.1.2/dist/flowbite.min.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="../../app.js"></script>
 </head>
 <body>
     <div class="container">
@@ -28,7 +31,7 @@
                     
                     <label for="phone">رقم الجوال</label>
                     <div class="phone-input">
-                        <input type="tel" id="phone" placeholder="أدخل رقم الجوال" required>
+                        <input style="direction: rtl;" type="tel" id="phone" placeholder="أدخل رقم الجوال" required>
                         <div class="phone-code">
                             <span>966+</span>
                             <svg width="23" height="24" viewBox="0 0 33 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -100,7 +103,6 @@
             <p>سجل الآن واضح أفكار من 50 ألف متابع يستفيد من خدماتنا التوجيهية والذوات السوقية المكاملة في ضمّة سلة</p>
         </div>
     </div>
-    <script src="https://cdn.jsdelivr.net/npm/intl-tel-input@25.3.0/build/js/intlTelInput.min.js"></script>
     <script>
     document.addEventListener('DOMContentLoaded', function() {
     const registerBtn = document.getElementById('registerBtn');
