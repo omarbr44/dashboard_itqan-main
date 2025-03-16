@@ -81,7 +81,7 @@ class Header extends HTMLElement {
             </svg>
             </button>
                <!-- Notification Dropdown -->
-                <div id="notification-dropdown" style="top: 2rem;" class="hidden absolute right-0 mt-12 w-64 bg-white border border-gray-200 rounded-lg shadow-lg">
+                <div id="notification-dropdown" style="top: 0rem;" class="hidden absolute right-0 mt-12 w-64 bg-white border border-gray-200 rounded-lg shadow-lg">
                   <div class="p-4">
                         <!-- Notification Items -->
     <div class="space-y-2">
