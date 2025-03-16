@@ -62,7 +62,7 @@ class Table extends HTMLElement {
           </div>
         </div>
       </div>
-      <table id="table" class="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
+      <table id="myTable" class="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
         <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
           <tr>
             ${columns.map((column) => `<th scope="col" class="px-6 py-3 font-semibold">${column}</th>`).join('')}
@@ -109,7 +109,7 @@ class Table extends HTMLElement {
                         <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                           <path d="M14.168 2.5009C14.3868 2.28203 14.6467 2.10842 14.9326 1.98996C15.2186 1.87151 15.5251 1.81055 15.8346 1.81055C16.1442 1.81055 16.4507 1.87151 16.7366 1.98996C17.0226 2.10842 17.2824 2.28203 17.5013 2.5009C17.7202 2.71977 17.8938 2.97961 18.0122 3.26558C18.1307 3.55154 18.1917 3.85804 18.1917 4.16757C18.1917 4.4771 18.1307 4.7836 18.0122 5.06956C17.8938 5.35553 17.7202 5.61537 17.5013 5.83424L6.2513 17.0842L1.66797 18.3342L2.91797 13.7509L14.168 2.5009Z" stroke="black" stroke-width="1.66667" stroke-linecap="round" stroke-linejoin="round"/>
                         </svg>
-                        <a href="#" class="block">تعديل البيانات</a>
+                        <a class="block cursor-pointer">تعديل البيانات</a>
                       </li>
                       <li data-modal-target="activate" data-modal-toggle="activate" class="flex items-center gap-x-2 px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white cursor-pointer">
                         <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -119,7 +119,7 @@ class Table extends HTMLElement {
                           <path d="M14.0995 16.5004C13.9411 16.5004 13.7828 16.4421 13.6578 16.3171C13.4161 16.0754 13.4161 15.6754 13.6578 15.4338L15.4161 13.6754C15.6578 13.4337 16.0578 13.4337 16.2995 13.6754C16.5411 13.9171 16.5411 14.3171 16.2995 14.5587L14.5411 16.3171C14.4161 16.4421 14.2578 16.5004 14.0995 16.5004Z" fill="#10B981"/>
                           <path d="M15.8851 16.516C15.7268 16.516 15.5685 16.4577 15.4435 16.3327L13.6852 14.5743C13.4435 14.3327 13.4435 13.9327 13.6852 13.691C13.9268 13.4493 14.3268 13.4493 14.5685 13.691L16.3268 15.4493C16.5685 15.691 16.5685 16.091 16.3268 16.3327C16.2018 16.4577 16.0435 16.516 15.8851 16.516Z" fill="#10B981"/>
                         </svg>
-                        <a href="#" class="block text-[#10B981]">تنشيط المستخدم</a>
+                        <a class="block text-[#10B981]">تنشيط المستخدم</a>
                       </li>
                  <li data-modal-target="delete" data-modal-toggle="delete" class="flex items-center gap-x-2 px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white cursor-pointer">
                           <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -129,7 +129,7 @@ class Table extends HTMLElement {
                             <path d="M14.0995 16.5004C13.9411 16.5004 13.7828 16.4421 13.6578 16.3171C13.4161 16.0754 13.4161 15.6754 13.6578 15.4338L15.4161 13.6754C15.6578 13.4337 16.0578 13.4337 16.2995 13.6754C16.5411 13.9171 16.5411 14.3171 16.2995 14.5587L14.5411 16.3171C14.4161 16.4421 14.2578 16.5004 14.0995 16.5004Z" fill="#E92727"/>
                             <path d="M15.8851 16.516C15.7268 16.516 15.5685 16.4577 15.4435 16.3327L13.6852 14.5743C13.4435 14.3327 13.4435 13.9327 13.6852 13.691C13.9268 13.4493 14.3268 13.4493 14.5685 13.691L16.3268 15.4493C16.5685 15.691 16.5685 16.091 16.3268 16.3327C16.2018 16.4577 16.0435 16.516 15.8851 16.516Z" fill="#E92727"/>
                           </svg>
-                          <a href="#" class="block text-[#E92727]">حذف المستخدم</a>
+                          <a class="block text-[#E92727]">حذف المستخدم</a>
                         </li>
                       </ul>
                     </div>
