@@ -39,9 +39,7 @@ class Table extends HTMLElement {
   const startIndex = (this.currentPage - 1) * this.rowsPerPage;
   const endIndex = startIndex + this.rowsPerPage;
   const currentRows = rowsToDisplay.slice(startIndex, endIndex);
-
  
-
   this.innerHTML = `
   <div class="relative py-5 overflow-x-auto shadow-md sm:rounded-lg">
     <!-- Add  -->
@@ -201,7 +199,7 @@ class Table extends HTMLElement {
               </svg>
             </div>
                                         <div class="flex-col flex m-3 ">
-                                <svg width="60" height="60" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <svg id="svg-circle" width="60" height="60" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
                                     <circle cx="40" cy="40" r="40" fill="#EBF2FF"/>
                                     <path d="M40.1979 41.3014C40.0813 41.2848 39.9313 41.2848 39.7979 41.3014C36.8646 41.2014 34.5312 38.8014 34.5312 35.8514C34.5312 32.8348 36.9646 30.3848 39.9979 30.3848C43.0146 30.3848 45.4646 32.8348 45.4646 35.8514C45.4479 38.8014 43.1313 41.2014 40.1979 41.3014Z" stroke="#377DFF" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
                                     <path d="M51.2362 52.3016C48.2695 55.0182 44.3362 56.6682 40.0029 56.6682C35.6695 56.6682 31.7362 55.0182 28.7695 52.3016C28.9362 50.7349 29.9362 49.2016 31.7195 48.0016C36.2862 44.9682 43.7529 44.9682 48.2862 48.0016C50.0695 49.2016 51.0695 50.7349 51.2362 52.3016Z" stroke="#377DFF" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
@@ -211,7 +209,9 @@ class Table extends HTMLElement {
                                     <path d="M13.2856 62.249L8.15439 67.6803C7.96064 67.8865 7.77314 68.2928 7.73564 68.574L7.50439 70.599C7.42314 71.3303 7.94814 71.8303 8.67314 71.7053L10.6856 71.3615C10.9669 71.3115 11.3606 71.1053 11.5544 70.8928L16.6856 65.4615C17.5731 64.524 17.9731 63.4553 16.5919 62.149C15.2169 60.8553 14.1731 61.3115 13.2856 62.249Z" stroke="#377DFF" stroke-width="0.9375" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
                                     <path d="M12.4297 63.1562C12.6984 64.8812 14.0984 66.2 15.8359 66.375" stroke="#377DFF" stroke-width="0.9375" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
                                     <path d="M6.875 73.75H18.125" stroke="#377DFF" stroke-width="0.9375" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
-                                    </svg>
+                                    <image id="profile-image" href="" x="10" y="10" width="60" height="60" clip-path="circle(40 at 40 40)" />
+                                  </svg>
+                                    <input type="file" style="display: none;" id="file-input">
                                     
                                     
                                 <div class=" flex w-[100%]  mt-3 justify-center items-center">
@@ -478,7 +478,32 @@ class Table extends HTMLElement {
     this.initializeDropdowns();
     
     this.addSearchListener();
+    
+    this.addFileInputListener();
   }
+
+    addFileInputListener() {
+      const svgCircle = this.querySelector('#svg-circle');
+      const fileInput = this.querySelector('#file-input');
+      const profileImage = this.querySelector('#profile-image');
+      svgCircle.addEventListener('click', () => {
+        console.log('aa')
+        fileInput.click(); // Trigger file input click
+      });
+
+      // Handle file selection
+      fileInput.addEventListener('change', (event) => {
+        const file = event.target.files[0];
+        if (file) {
+            const reader = new FileReader();
+            reader.onload = (e) => {
+                // Update the image source with the selected file
+                profileImage.setAttribute('href', e.target.result);
+            };
+            reader.readAsDataURL(file); // Convert the file to a data URL
+        }
+    });
+}
 
   addPaginationListeners() {
     // Add event listener for "Previous" button
